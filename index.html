@@ -114,13 +114,28 @@
           </div>
         </div>
 
-        <!-- Center / Right: Clean Section Quick Links -->
-        <nav class="hidden md:flex items-center gap-1 text-xs font-medium text-slate-300">
-          <a href="#sec-overview" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all">Overview</a>
-          <a href="#sec-moats" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all">Why It Wins</a>
-          <a href="#sec-catalog" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all">70+ APIs</a>
-          <a href="#sec-calculator" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all">Profit Model</a>
-          <a href="#sec-ideas" class="px-3 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/20 transition-all font-semibold">5 Product Ideas</a>
+        <!-- Center / Right: Desktop Navigation matching exact 5 items from the image -->
+        <nav class="hidden md:flex items-center gap-1.5 text-xs font-medium">
+          <a href="#sec-overview" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            <span>Scale</span>
+          </a>
+          <a href="#sec-moats" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            <span>Moat</span>
+          </a>
+          <a href="#sec-catalog" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+            <span>APIs</span>
+          </a>
+          <a href="#sec-calculator" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            <span>Profit</span>
+          </a>
+          <a href="#sec-ideas" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/20 font-bold transition-all">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <span>Ideas</span>
+          </a>
         </nav>
 
         <!-- Right: Mobile Pill Badge -->
@@ -132,30 +147,6 @@
 
       </div>
     </header>
-
-    <!-- NATIVE MOBILE BOTTOM NAV BAR (STICKY AT BOTTOM FOR PHONES) -->
-    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#0c0e14]/90 backdrop-blur-2xl border-t border-white/10 px-2 py-1.5 flex items-center justify-around shadow-2xl text-[10px] font-medium text-slate-400">
-      <a href="#sec-overview" class="flex flex-col items-center py-1 px-2 text-white font-bold bottom-nav-link" onclick="highlightNav(this)">
-        <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-        <span>Scale</span>
-      </a>
-      <a href="#sec-moats" class="flex flex-col items-center py-1 px-2 bottom-nav-link" onclick="highlightNav(this)">
-        <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-        <span>Moat</span>
-      </a>
-      <a href="#sec-catalog" class="flex flex-col items-center py-1 px-2 bottom-nav-link" onclick="highlightNav(this)">
-        <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
-        <span>APIs</span>
-      </a>
-      <a href="#sec-calculator" class="flex flex-col items-center py-1 px-2 bottom-nav-link" onclick="highlightNav(this)">
-        <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-        <span>Profit</span>
-      </a>
-      <a href="#sec-ideas" class="flex flex-col items-center py-1 px-2 text-emerald-400 font-bold bottom-nav-link" onclick="highlightNav(this)">
-        <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        <span>Ideas</span>
-      </a>
-    </nav>
 
     <div class="max-w-6xl mx-auto px-4 sm:px-5 pt-6 pb-6 relative z-10">
 
@@ -630,7 +621,29 @@
 
     </main>
 
-  </div>
+  <!-- NATIVE MOBILE BOTTOM NAV BAR (TOP-LEVEL DIRECT CHILD OF BODY TO FIX GLITCHING & CLIPPING) -->
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-[9999] bg-[#080b11]/95 backdrop-blur-xl border-t border-white/15 px-2 py-1.5 pb-[max(0.5rem,env(safe-area-inset-bottom))] flex items-center justify-around shadow-[0_-10px_30px_rgba(0,0,0,0.9)] text-[10px] font-medium text-slate-400" style="transform: translateZ(0); -webkit-transform: translateZ(0); backface-visibility: hidden;">
+    <a href="#sec-overview" class="flex flex-col items-center py-1 px-2 text-white font-bold bottom-nav-link" onclick="highlightNav(this)">
+      <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      <span>Scale</span>
+    </a>
+    <a href="#sec-moats" class="flex flex-col items-center py-1 px-2 bottom-nav-link" onclick="highlightNav(this)">
+      <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      <span>Moat</span>
+    </a>
+    <a href="#sec-catalog" class="flex flex-col items-center py-1 px-2 bottom-nav-link" onclick="highlightNav(this)">
+      <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+      <span>APIs</span>
+    </a>
+    <a href="#sec-calculator" class="flex flex-col items-center py-1 px-2 bottom-nav-link" onclick="highlightNav(this)">
+      <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+      <span>Profit</span>
+    </a>
+    <a href="#sec-ideas" class="flex flex-col items-center py-1 px-2 text-emerald-400 font-bold bottom-nav-link" onclick="highlightNav(this)">
+      <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      <span>Ideas</span>
+    </a>
+  </nav>
 
   <!-- JAVASCRIPT FOR SECTORS, CALCULATOR & COPY -->
   <script>
