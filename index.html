@@ -1710,8 +1710,8 @@
       const sectorChips = document.getElementById('sectorChips');
       const explainer = document.getElementById('modeExplainerBanner');
       const gemBtn = document.getElementById('gemToggleBtn');
+      const searchInput = document.getElementById('apiSearchInput');
 
-      // Reset all tabs to inactive
       // Reset all tabs to inactive
       [tabApis, tabDatasets, tabUs].forEach(tab => {
         tab.className = "p-3 rounded-xl text-left transition-all bg-[#080b11] border border-transparent hover:bg-white/5 text-slate-300 flex items-center justify-between";
@@ -1726,6 +1726,7 @@
         tabApis.querySelector('.text-xs').className = "text-xs font-bold text-emerald-300";
         sectorChips.classList.remove('hidden');
         explainer.classList.add('hidden');
+        if (searchInput) searchInput.placeholder = "Search APIs (e.g. GST, car, court, degree)...";
       } else if (mode === 'datasets') {
         tabDatasets.className = "p-3 rounded-xl text-left transition-all bg-purple-500/15 border border-purple-500/40 text-white shadow-sm flex items-center justify-between";
         tabDatasets.querySelector('.text-xs').className = "text-xs font-bold text-purple-300";
@@ -1738,6 +1739,7 @@
             <span>DOWNLOAD ONCE • SEARCH OFFLINE • FREE TO USE FOR SOFTWARE & AI</span>
           </div>
         `;
+        if (searchInput) searchInput.placeholder = "Search databases (e.g. PIN code, company, court, map)...";
       } else if (mode === 'us') {
         tabUs.className = "p-3 rounded-xl text-left transition-all bg-cyan-500/15 border border-cyan-500/40 text-white shadow-sm flex items-center justify-between";
         tabUs.querySelector('.text-xs').className = "text-xs font-bold text-cyan-300";
@@ -1750,6 +1752,7 @@
             <span>FREE US PUBLIC DATA • ZERO DATA COSTS • SELL TO US ENTERPRISES IN USD</span>
           </div>
         `;
+        if (searchInput) searchInput.placeholder = "Search US benchmarks (e.g. SEC, FDA, weather, patent)...";
       }
 
       renderCatalog();
