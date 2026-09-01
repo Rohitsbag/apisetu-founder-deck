@@ -390,31 +390,51 @@
         </div>
       </section>
 
-      <!-- 5. COMPLETE 8-SECTOR API DIRECTORY -->
+      <!-- 5. COMPLETE 70+ SOVEREIGN API DIRECTORY & AHA-MOMENT ENGINE -->
       <section id="sec-catalog" class="space-y-4">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
           <div>
-            <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">05 // API DIRECTORY</span>
-            <h2 class="text-lg font-bold text-white">All 8 Primary Government Sectors</h2>
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30 uppercase tracking-wider">05 // SOVEREIGN API DIRECTORY</span>
+              <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded border border-white/10">70+ HIGH-IMPACT ENDPOINTS ANALYZED</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-extrabold text-white mt-1">The Sovereign API Catalog & "Aha!" Opportunity Engine</h2>
+            <p class="text-xs text-slate-300 mt-0.5 max-w-2xl leading-relaxed">
+              Real sovereign databases from Central Ministries, State Boards, Courts, and Utilities. Each card reveals the exact machine-readable data and the 💡 <span class="text-emerald-400 font-semibold">"Aha!" product</span> you can build.
+            </p>
           </div>
-          <span class="text-xs text-slate-400 font-mono hidden sm:inline">Tap to switch sector</span>
+          <div class="flex items-center gap-2 shrink-0">
+            <button onclick="toggleGemsFilter()" id="gemToggleBtn" class="px-3 py-2 text-xs font-mono font-bold bg-amber-500/10 text-amber-300 border border-amber-500/30 rounded-xl hover:bg-amber-500/20 active:scale-95 transition-all flex items-center gap-1.5 shadow-sm">
+              <span>⚡ Top 10 "Aha!" Hidden Gems</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- SEARCH INPUT -->
+        <div class="relative">
+          <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+          <input type="text" id="apiSearchInput" oninput="handleSearch(this.value)" placeholder="Search 70+ APIs (e.g. GST, doctor, court, land mutation, loan lien, truck fitness, degree, tenant, ration, subsidy)..." class="w-full bg-black/50 border border-white/15 rounded-xl pl-10 pr-24 py-3 text-xs sm:text-sm text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-all font-mono shadow-inner">
+          <div id="searchCounter" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-[11px] font-mono text-emerald-400 font-bold"></div>
         </div>
 
         <!-- Horizontal Scrollable Sector Bar -->
         <div class="flex gap-1.5 overflow-x-auto no-scrollbar pb-1 bg-white/5 backdrop-blur-md p-1.5 rounded-xl border border-white/10" id="sectorChips">
-          <button onclick="selectSector('finance')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all active-pill border border-transparent shrink-0" data-sector="finance">1. Finance & Tax</button>
-          <button onclick="selectSector('transport')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0" data-sector="transport">2. Transport</button>
-          <button onclick="selectSector('education')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0" data-sector="education">3. Education</button>
-          <button onclick="selectSector('identity')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0" data-sector="identity">4. Identity</button>
-          <button onclick="selectSector('health')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0" data-sector="health">5. Health</button>
-          <button onclick="selectSector('schemes')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0" data-sector="schemes">6. Schemes</button>
-          <button onclick="selectSector('land')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0" data-sector="land">7. Land & Courts</button>
-          <button onclick="selectSector('agriculture')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0" data-sector="agriculture">8. Agri & Utilities</button>
+          <button onclick="selectSector('all')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all active-pill border border-transparent shrink-0" data-sector="all">All APIs (70+)</button>
+          <button onclick="selectSector('finance')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0" data-sector="finance">1. Finance & Tax (10)</button>
+          <button onclick="selectSector('transport')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0" data-sector="transport">2. Transport & Fleet (9)</button>
+          <button onclick="selectSector('education')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0" data-sector="education">3. Education & BGV (9)</button>
+          <button onclick="selectSector('identity')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0" data-sector="identity">4. Identity & Civic (9)</button>
+          <button onclick="selectSector('health')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0" data-sector="health">5. Health & MedTech (8)</button>
+          <button onclick="selectSector('schemes')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0" data-sector="schemes">6. Schemes & Welfare (8)</button>
+          <button onclick="selectSector('land')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0" data-sector="land">7. Land & Courts (8)</button>
+          <button onclick="selectSector('agriculture')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0" data-sector="agriculture">8. Agri & Utilities (8)</button>
         </div>
 
-        <!-- Sector Content -->
-        <div class="bg-white/5 backdrop-blur-md p-4 sm:p-5 rounded-xl border border-white/10 space-y-3" id="sectorDisplay">
-          <!-- Javascript renders sector details -->
+        <!-- Dynamic APIs Grid Container -->
+        <div id="apiListContainer" class="grid sm:grid-cols-2 gap-3 pt-1">
+          <!-- Javascript renders all 70+ cards with Aha Moments -->
         </div>
       </section>
 
@@ -743,158 +763,979 @@
       document.getElementById('monthlyProfit').innerText = `₹${Math.round(profit).toLocaleString('en-IN')}`;
     }
 
-    const sectorData = {
-      finance: {
-        title: "Sector 1: Business, Tax & Financial Diligence",
-        publishers: "Goods and Services Tax Network (GSTN), CBDT, Ministry of Corporate Affairs (MCA21), EPFO, PFRDA",
-        badge: "Direct Query & Consent",
-        badgeColor: "bg-blue-500/20 text-blue-300 border-blue-500/30",
-        sparks: "Automated vendor onboarding, invoice risk score, contractor PF compliance checker, SME credit underwriting",
-        dataPoints: [
-          { name: "GSTIN Verification & Status", desc: "Active, suspended, or canceled tax status and business trade name" },
-          { name: "12-Month GSTR Filing History", desc: "Filing regularity for GSTR-1 & GSTR-3B to spot tax defaulters" },
-          { name: "MCA21 Company Master Data", desc: "Incorporation vintage, registered capital, and Director (DIN) records" },
-          { name: "EPFO / UAN Records", desc: "Provident fund employment verification without relying on fake payslips" },
-          { name: "Pension Orders (PPO)", desc: "Central & State Pension Payment Orders and Atal Pension Yojana" }
-        ]
+    // 70+ CURATED SOVEREIGN GOVERNMENT APIS DATABASE
+    const allApis = [
+      // 1. FINANCE & TAX (10 APIs)
+      {
+        id: "fin-1",
+        sector: "finance",
+        sectorName: "Finance & Tax",
+        code: "GSTN-ACTIVE-PROFILE",
+        name: "GSTIN Profile & Taxpayer Constitution",
+        publisher: "Goods and Services Tax Network (GSTN)",
+        access: "Service API (No OTP)",
+        fields: "Active / Suspended / Cancelled status, Legal Name, Trade Name, Principal Address, Constitution (Pvt Ltd / LLP / Prop)",
+        aha: "Automated B2B Vendor KYC: Match business bank accounts and weed out bogus shell entities before issuing vendor contracts.",
+        isGem: false
       },
-      transport: {
-        title: "Sector 2: Transport, Fleet & Driver Logistics",
-        publishers: "Ministry of Road Transport and Highways (MoRTH), State RTOs, NHAI, NPCI",
-        badge: "Vahan & Sarathi Fleet",
-        badgeColor: "bg-blue-500/20 text-blue-300 border-blue-500/30",
-        sparks: "Used vehicle lemon inspector, automated driver hiring for logistics fleets, fleet FASTag audit, stolen RC alert",
-        dataPoints: [
-          { name: "Vehicle Registration (RC)", desc: "Ownership serial number (1st vs 3rd), engine/chassis number verification" },
-          { name: "Driving License (DL)", desc: "Active license validity, vehicle class endorsements, and RTO jurisdiction" },
-          { name: "Hypothecation Status", desc: "Active bank loan liens directly marked on vehicle records" },
-          { name: "Fitness, PUCC & Insurance", desc: "Commercial vehicle fitness expiry, pollution (PUCC), and active third-party insurance" },
-          { name: "State Traffic e-Challan", desc: "Unpaid traffic fines, violation codes, and court referral statuses" }
-        ]
+      {
+        id: "fin-2",
+        sector: "finance",
+        sectorName: "Finance & Tax",
+        code: "GSTN-GSTR-TRACK",
+        name: "12-Month GSTR-1 & 3B Filing Regularity",
+        publisher: "Goods and Services Tax Network (GSTN)",
+        access: "Service API (No OTP)",
+        fields: "Month-by-month return filing dates, delay count, return status, turnover bracket indicator",
+        aha: "B2B Trade Credit Score: Don't lend or ship goods on 60-day credit without verifying tax filing regularity in real-time.",
+        isGem: true
       },
-      education: {
-        title: "Sector 3: Education & Academic Credentials",
-        publishers: "CBSE, CISCE, 50+ State Education Boards, UGC, AICTE, National Academic Depository (NAD), National Testing Agency (NTA)",
-        badge: "DigiLocker / NAD / ABC",
-        badgeColor: "bg-purple-500/20 text-purple-300 border-purple-500/30",
-        sparks: "10-second candidate resume auditor, college transfer credit calculator, verified graduate talent badge for LinkedIn",
-        dataPoints: [
-          { name: "Class 10th & 12th Marksheets", desc: "Digital passing certificates with cryptographic signing from all national/state boards" },
-          { name: "Academic Bank of Credits (ABC)", desc: "Universal student ID, earned credits, and university degree verification" },
-          { name: "Skill India / NSDC Certificates", desc: "Vocational training and technical skill qualifications" },
-          { name: "Scholarship Disbursals", desc: "National Scholarship Portal status and allocation verification" }
-        ]
+      {
+        id: "fin-3",
+        sector: "finance",
+        sectorName: "Finance & Tax",
+        code: "MCA21-CO-MASTER",
+        name: "Company & LLP Master Registry",
+        publisher: "Ministry of Corporate Affairs (MCA21)",
+        access: "Service API (No OTP)",
+        fields: "Incorporation vintage, Authorized & Paid-up Capital, Registered ROC Office, Active/Struck-off Status",
+        aha: "Enterprise Due-Diligence: Automatically detect shell companies incorporated less than 30 days ago bidding on tenders.",
+        isGem: false
       },
-      identity: {
-        title: "Sector 4: Identity & Civic Documents",
-        publishers: "UIDAI, DigiLocker, Dept of Food & Public Distribution, State Revenue Departments",
-        badge: "Consent-Driven e-KYC",
-        badgeColor: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
-        sparks: "Privacy-preserving tenant passport, paperless domestic worker onboarding, fraud-proof matrimony profile verification",
-        dataPoints: [
-          { name: "Masked Aadhaar XML", desc: "Tamper-proof identity, verified age & home state without leaking raw 12 digits" },
-          { name: "PAN Verification", desc: "Instant PAN validity, holder full name match, and active status" },
-          { name: "Ration Card (NFSA)", desc: "Family tree, ration entitlement, and Fair Price Shop (FPS) allocation" },
-          { name: "Caste, Income & Domicile", desc: "State revenue department digitally certified certificates" },
-          { name: "Birth, Death & Marriage", desc: "Municipal corporation verified vital event records" }
-        ]
+      {
+        id: "fin-4",
+        sector: "finance",
+        sectorName: "Finance & Tax",
+        code: "MCA21-DIR-DIN",
+        name: "Director DIN & Cross-Directorship Ledger",
+        publisher: "Ministry of Corporate Affairs (MCA21)",
+        access: "Service API (No OTP)",
+        fields: "Director Identification Number, active appointments, disqualified director flag under Section 164(2)",
+        aha: "Founder & Executive Risk Shield: Uncover hidden director disqualifications and webs of conflicted shell businesses.",
+        isGem: false
       },
-      health: {
-        title: "Sector 5: Health & Social Welfare",
-        publishers: "National Health Authority (NHA), CoWIN, Ministry of Social Justice, Ministry of Labour",
-        badge: "Ayushman Bharat / NHA",
-        badgeColor: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
-        sparks: "Hospital package rate auditor, health insurance claim pre-validator, disabled citizen concession pass",
-        dataPoints: [
-          { name: "Ayushman Bharat (ABHA ID)", desc: "Verified health account records and PM-JAY ₹5L cover status" },
-          { name: "Unique Disability ID (UDID)", desc: "Official disability certification and concession cards" },
-          { name: "e-Shram Worker ID", desc: "Unorganized sector worker registration and occupational category" },
-          { name: "PM-KISAN Status", desc: "Farmer beneficiary direct benefit transfer (DBT) installment ledger" }
-        ]
+      {
+        id: "fin-5",
+        sector: "finance",
+        sectorName: "Finance & Tax",
+        code: "MCA21-ROC-CHARGES",
+        name: "Registered Asset Charges & Bank Mortgages",
+        publisher: "Ministry of Corporate Affairs (MCA21)",
+        access: "Service API (No OTP)",
+        fields: "Charge creation date, secured amount, holder bank name, hypothecated plant/inventory descriptions",
+        aha: "Working Capital Lending Shield: Instantly check if a borrower already pledged machinery or stock to another bank.",
+        isGem: true
       },
-      schemes: {
-        title: "Sector 6: Schemes & Citizen Governance",
-        publishers: "myScheme, Ministry of Electronics & IT (MeitY), Panchayati Raj, CPGRAMS",
-        badge: "Open Rule Engine",
-        badgeColor: "bg-amber-500/20 text-amber-300 border-amber-500/30",
-        sparks: "AI welfare entitlement calculator, CSR beneficiary vetting tool, automated grievance notice drafter",
-        dataPoints: [
-          { name: "myScheme Metadata & Rules", desc: "2,000+ central & state welfare eligibility trees and benefit values" },
-          { name: "Required Document Checklists", desc: "Automated checklist generation to claim grants without middlemen" },
-          { name: "Panchayat Expenditure", desc: "Local body fund allocations, ongoing projects, and rural grants" },
-          { name: "CPGRAMS Grievance Categories", desc: "Citizen public service grievance filing and tracking endpoints" }
-        ]
+      {
+        id: "fin-6",
+        sector: "finance",
+        sectorName: "Finance & Tax",
+        code: "MSME-UDYAM-REG",
+        name: "Udyam MSME Classification & Turnover",
+        publisher: "Ministry of Micro, Small and Medium Enterprises",
+        access: "Document API (DigiLocker)",
+        fields: "Udyam Registration Number, Micro/Small/Medium category, plant & machinery investment, major activity",
+        aha: "MSME Priority Credit Engine: Auto-approve priority sector micro-loans for certified MSMEs with government subsidies.",
+        isGem: false
       },
-      land: {
-        title: "Sector 7: Legal, Land Records & Judicial",
-        publishers: "e-Courts, State Revenue Departments (Bhulekh, Bhoomi, Dharani, Meebhoomi)",
-        badge: "Public Judicial & Land",
-        badgeColor: "bg-purple-500/20 text-purple-300 border-purple-500/30",
-        sparks: "Ancestral land title fraud watchdog, real-estate buyer diligence dossier, litigation check on business partners",
-        dataPoints: [
-          { name: "e-Courts Case Status", desc: "Case history, hearings, orders, and cause lists across District & High Courts" },
-          { name: "Land Title / Khatauni", desc: "Survey numbers, registered owner names, and land classification" },
-          { name: "Mutation & Encumbrance Status", desc: "Pending land mutation requests and recorded encumbrances" }
-        ]
+      {
+        id: "fin-7",
+        sector: "finance",
+        sectorName: "Finance & Tax",
+        code: "DGFT-IEC-VALID",
+        name: "Importer-Exporter Code (IEC) Status",
+        publisher: "Directorate General of Foreign Trade (DGFT)",
+        access: "Service API (No OTP)",
+        fields: "IEC number, entity name, authorized port jurisdictions, Denied Entity List (DEL) sanctions flag",
+        aha: "Cross-Border Trade FinTech: Instant freight-forwarding risk audit to ensure exporters are not on blacklists.",
+        isGem: false
       },
-      agriculture: {
-        title: "Sector 8: Agriculture, Mandi Rates & Utilities",
-        publishers: "e-NAM (Small Farmers' Agri-Business Consortium), State Electricity DISCOMs, Water Authorities",
-        badge: "Open Market & Utility",
-        badgeColor: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
-        sparks: "Tenant electricity slab overcharge detector, Mandi price arbitrage alert for farmers, agricultural loan proof",
-        dataPoints: [
-          { name: "e-NAM Mandi Commodity Rates", desc: "Real-time daily modal prices and arrivals across 1,000+ agricultural APMC mandis" },
-          { name: "Electricity DISCOM Consumer Bills", desc: "Consumer meter status, active tariff slab, sanctioned load, and payment histories" },
-          { name: "Soil Health Card Data", desc: "Macronutrient / micronutrient test records and soil quality recommendations" },
-          { name: "Municipal Water & Property Tax", desc: "Property tax dues, municipal assessment number, and connection legality" }
-        ]
+      {
+        id: "fin-8",
+        sector: "finance",
+        sectorName: "Finance & Tax",
+        code: "EPFO-ESTAB-PASS",
+        name: "Provident Fund Salaried Headcount Audit",
+        publisher: "Employees' Provident Fund Organisation (EPFO)",
+        access: "Service API (No OTP)",
+        fields: "Employer PF code, active salaried headcount contributing to PF, monthly wage remittance regularity",
+        aha: "Real Headcount Verification: Verify how many employees a company ACTUALLY pays salaries to (debunk fake LinkedIn claims).",
+        isGem: false
+      },
+      {
+        id: "fin-9",
+        sector: "finance",
+        sectorName: "Finance & Tax",
+        code: "PFRDA-PRAN-PPO",
+        name: "Central & State Pension Payment Orders",
+        publisher: "PFRDA / Central Pension Accounting Office",
+        access: "Document API (DigiLocker)",
+        fields: "PRAN number, Pension Payment Order (PPO) number, basic monthly pension entitlement, life certificate date",
+        aha: "Senior Citizen FinTech: Instant pension-backed micro-loans and automated biometric life-certificate renewal apps.",
+        isGem: false
+      },
+      {
+        id: "fin-10",
+        sector: "finance",
+        sectorName: "Finance & Tax",
+        code: "LEI-REG-VERIFY",
+        name: "Legal Entity Identifier (>₹50 Cr Transactions)",
+        publisher: "Clearing Corporation of India (CCIL / RBI)",
+        access: "Service API (No OTP)",
+        fields: "20-digit LEI code, parent organization mapping, RBI-mandated large transaction compliance status",
+        aha: "High-Value Transaction SaaS: Automated compliance engine for corporate treasury transfers above ₹50 Cr.",
+        isGem: false
+      },
+
+      // 2. TRANSPORT & FLEET (9 APIs)
+      {
+        id: "trans-1",
+        sector: "transport",
+        sectorName: "Transport & Fleet",
+        code: "VAHAN-RC-CORE",
+        name: "Vehicle RC Master & Technical Specs",
+        publisher: "Ministry of Road Transport & Highways (MoRTH)",
+        access: "Service API (No OTP)",
+        fields: "Vehicle class (Private vs Commercial), maker/model, fuel type, cubic capacity, engine & chassis validity",
+        aha: "Auto-Cataloging for AutoTech: Scan vehicle license plate to auto-fill complete car specifications on used marketplaces.",
+        isGem: false
+      },
+      {
+        id: "trans-2",
+        sector: "transport",
+        sectorName: "Transport & Fleet",
+        code: "VAHAN-OWNER-SEQ",
+        name: "Vehicle Ownership Sequence (1st vs 3rd Hand)",
+        publisher: "Ministry of Road Transport & Highways (MoRTH)",
+        access: "Service API (No OTP)",
+        fields: "Serial owner sequence (1 = First owner, 2 = Second owner, 3+ = Heavy transfer history)",
+        aha: "Used Car Lemon Buster: Catch fraudulent dealers claiming a 3rd-hand abused taxi is a 'single owner doctor-driven' car.",
+        isGem: true
+      },
+      {
+        id: "trans-3",
+        sector: "transport",
+        sectorName: "Transport & Fleet",
+        code: "VAHAN-HYPOTHECATION",
+        name: "Active Bank Hypothecation & Loan Liens",
+        publisher: "Ministry of Road Transport & Highways (MoRTH)",
+        access: "Service API (No OTP)",
+        fields: "Financed indicator, financing bank name (e.g. HDFC/SBI), RTO lien registered timestamp",
+        aha: "Instant Auto-Loan Clearance: Prevent consumers from buying second-hand vehicles that carry unpaid ₹6 Lakh bank loans.",
+        isGem: true
+      },
+      {
+        id: "trans-4",
+        sector: "transport",
+        sectorName: "Transport & Fleet",
+        code: "VAHAN-COMM-PERMIT",
+        name: "Commercial Transport Permits & Validity",
+        publisher: "Ministry of Road Transport & Highways (MoRTH)",
+        access: "Service API (No OTP)",
+        fields: "Permit type (National Permit, State Goods, All-India Tourist), expiry date, authorized state corridors",
+        aha: "Logistics Fleet Compliance Hub: Automated dashboard alerting fleet managers 30 days before interstate route permits lapse.",
+        isGem: false
+      },
+      {
+        id: "trans-5",
+        sector: "transport",
+        sectorName: "Transport & Fleet",
+        code: "VAHAN-FITNESS-PUCC",
+        name: "Commercial Fitness & Pollution Expiry",
+        publisher: "Ministry of Road Transport & Highways (MoRTH)",
+        access: "Service API (No OTP)",
+        fields: "Fitness inspection validity date, PUCC certificate number, emission standard (BS-IV / BS-VI)",
+        aha: "Warehouse Gatekeeper: Auto-disallow transport trucks with expired fitness from entering loading docks.",
+        isGem: false
+      },
+      {
+        id: "trans-6",
+        sector: "transport",
+        sectorName: "Transport & Fleet",
+        code: "SARATHI-DL-CORE",
+        name: "Driving License Validity & Vehicle Classes",
+        publisher: "Ministry of Road Transport & Highways (MoRTH)",
+        access: "Service API (No OTP)",
+        fields: "DL status (Active/Suspended), non-transport validity, transport validity, authorized classes (LMV, MCWG, HMV)",
+        aha: "10-Second Driver Onboarding: Instant compliance verification for Uber, Ola, Blinkit, and 3PL trucking fleets.",
+        isGem: false
+      },
+      {
+        id: "trans-7",
+        sector: "transport",
+        sectorName: "Transport & Fleet",
+        code: "SARATHI-COMM-BADGE",
+        name: "Public Commercial Badge & Hazchem Endorsement",
+        publisher: "Ministry of Road Transport & Highways (MoRTH)",
+        access: "Service API (No OTP)",
+        fields: "Commercial driver badge number, hazardous chemicals tanker transport endorsement, hill route authorization",
+        aha: "Petroleum & Chemical Driver Verification: Mandated safety verification for oil tanker and toxic material fleet operators.",
+        isGem: false
+      },
+      {
+        id: "trans-8",
+        sector: "transport",
+        sectorName: "Transport & Fleet",
+        code: "ECHALLAN-FINES",
+        name: "State Traffic Police Unpaid Challans",
+        publisher: "State Traffic Police / MoRTH e-Challan",
+        access: "Service API (No OTP)",
+        fields: "Pending fine amount, offense codes, camera photo evidence link, Virtual Court referral status",
+        aha: "Vehicle Sale Price Deductor: Auto-deduct ₹8,500 in pending speeding fines directly from the buyer's payment escrow.",
+        isGem: false
+      },
+      {
+        id: "trans-9",
+        sector: "transport",
+        sectorName: "Transport & Fleet",
+        code: "FASTAG-TOLL-LOG",
+        name: "FASTag Commercial Tag & Movement Ledger",
+        publisher: "National Payments Corporation of India (NPCI / NHAI)",
+        access: "Service API (No OTP)",
+        fields: "FASTag tag ID, vehicle mapping status, commercial toll classification, NPCI blacklist flag",
+        aha: "Fleet Toll Reconciliation: Auto-audit toll charges to catch duplicate debits and driver toll allowance fraud.",
+        isGem: false
+      },
+
+      // 3. EDUCATION & BGV (9 APIs)
+      {
+        id: "edu-1",
+        sector: "education",
+        sectorName: "Education & BGV",
+        code: "CBSE-MARKSHEET-X-XII",
+        name: "CBSE Class 10 & 12 Digital Marksheets",
+        publisher: "Central Board of Secondary Education (CBSE)",
+        access: "Document API (DigiLocker)",
+        fields: "Subject-wise marks, practical scores, grade points, result status (PASS/FAIL), cryptographic X.509 signature",
+        aha: "Zero-Fraud Campus Hiring: Verify fresher academic cutoffs in 10 seconds without reviewing fake scanned PDFs.",
+        isGem: false
+      },
+      {
+        id: "edu-2",
+        sector: "education",
+        sectorName: "Education & BGV",
+        code: "STATE-BOARDS-50",
+        name: "50+ State Board Matric & Inter Marksheets",
+        publisher: "State Education Boards (UP, MH, KA, TN, WB, etc.)",
+        access: "Document API (DigiLocker)",
+        fields: "Matriculation & Intermediate passing certificates, roll number validation across 28 Indian states",
+        aha: "Mass Blue-Collar Staffing Portal: Instantly screen tens of thousands of applicants for manufacturing and delivery roles.",
+        isGem: false
+      },
+      {
+        id: "edu-3",
+        sector: "education",
+        sectorName: "Education & BGV",
+        code: "UGC-NAD-ABCID",
+        name: "Academic Bank of Credits (ABC ID) Mobility",
+        publisher: "University Grants Commission / Min of Education",
+        access: "Document API (DigiLocker)",
+        fields: "Universal 12-digit ABC ID, earned credits per semester, course codes, degree completion progress",
+        aha: "College Credit Transfer Engine: Instantly calculate transferable credits when a student changes universities under NEP 2020.",
+        isGem: true
+      },
+      {
+        id: "edu-4",
+        sector: "education",
+        sectorName: "Education & BGV",
+        code: "UNIV-CONVOCATION-DEG",
+        name: "University Convocation Degrees & Diplomas",
+        publisher: "National Academic Depository (NAD / Universities)",
+        access: "Document API (DigiLocker)",
+        fields: "University name, faculty, branch (e.g. B.Tech Computer Science), degree classification, convocation year",
+        aha: "10-Second Executive BGV: Eliminate fake degree mills with direct digital university confirmation at 95% lower cost.",
+        isGem: false
+      },
+      {
+        id: "edu-5",
+        sector: "education",
+        sectorName: "Education & BGV",
+        code: "NTA-EXAM-SCORES",
+        name: "JEE, NEET UG & CUET Exam Percentiles",
+        publisher: "National Testing Agency (NTA)",
+        access: "Document API (DigiLocker)",
+        fields: "Candidate percentile, All-India Rank (AIR), category rank, subject-wise normalized scores",
+        aha: "EdTech Scholarship Engine: Automated student coaching fee discounts based on verified entrance test percentiles.",
+        isGem: false
+      },
+      {
+        id: "edu-6",
+        sector: "education",
+        sectorName: "Education & BGV",
+        code: "AICTE-COLLEGE-AUTH",
+        name: "Technical College & Course Accreditation",
+        publisher: "All India Council for Technical Education (AICTE)",
+        access: "Service API (No OTP)",
+        fields: "Institution approval status, sanctioned seat intake, accredited branches, faculty ratios",
+        aha: "Engineering College Rating Platform: Protect parents from admitting children into unapproved college courses.",
+        isGem: false
+      },
+      {
+        id: "edu-7",
+        sector: "education",
+        sectorName: "Education & BGV",
+        code: "CTET-TEACHER-QUAL",
+        name: "Central Teacher Eligibility Test (CTET)",
+        publisher: "Central Board of Secondary Education (CBSE)",
+        access: "Document API (DigiLocker)",
+        fields: "Primary & Upper Primary qualification scores, certificate serial, eligibility validity",
+        aha: "Private School Teacher Recruitment Hub: Pre-screen school teacher candidates for mandatory regulatory CTET compliance.",
+        isGem: false
+      },
+      {
+        id: "edu-8",
+        sector: "education",
+        sectorName: "Education & BGV",
+        code: "SKILL-INDIA-NSDC",
+        name: "Skill India PMKVY Vocational Qualifications",
+        publisher: "National Skill Development Corporation (NSDC)",
+        access: "Document API (DigiLocker)",
+        fields: "Qualification Pack (QP) code, National Skills Qualification Framework (NSQF) level, grade",
+        aha: "Certified Blue-Collar Marketplace: Connect verified plumbers, electricians, and technicians with high-paying facility contracts.",
+        isGem: false
+      },
+      {
+        id: "edu-9",
+        sector: "education",
+        sectorName: "Education & BGV",
+        code: "DGT-APPRENTICE-CERT",
+        name: "National Apprenticeship Certificate (NAC)",
+        publisher: "Ministry of Skill Development & Entrepreneurship",
+        access: "Document API (DigiLocker)",
+        fields: "Trade name (Fitter, Machinist, Welder), industry training duration, trade test mark percentage",
+        aha: "Automated Industrial Plant Staffing: Directly recruit factory-ready apprentices with certified practical training.",
+        isGem: false
+      },
+
+      // 4. IDENTITY & CIVIC (9 APIs)
+      {
+        id: "id-1",
+        sector: "identity",
+        sectorName: "Identity & Civic",
+        code: "UIDAI-MASKED-XML",
+        name: "Paperless Offline e-KYC (Masked Aadhaar)",
+        publisher: "DigiLocker / UIDAI",
+        access: "Document API (DigiLocker)",
+        fields: "Full name, gender, DOB, masked Aadhaar (XXXX-XXXX-1234), address, state, district, photo hash",
+        aha: "Privacy-Preserving Tenant & Staff Passes: Verify identity without storing raw 12 digits, eliminating DPDP Act compliance liability.",
+        isGem: false
+      },
+      {
+        id: "id-2",
+        sector: "identity",
+        sectorName: "Identity & Civic",
+        code: "PAN-VALID-MATCH",
+        name: "PAN Card Active Validity & Legal Name Match",
+        publisher: "Income Tax Dept / CBDT / NSDL",
+        access: "Service API (No OTP)",
+        fields: "PAN status (Existing and Valid), exact registered name, father's name, category (Individual / Firm / Trust)",
+        aha: "FinTech Anti-Fraud Shield: Instantly block fake PAN numbers entered on micro-loan and stock broker onboarding flows.",
+        isGem: false
+      },
+      {
+        id: "id-3",
+        sector: "identity",
+        sectorName: "Identity & Civic",
+        code: "PAN-AADHAAR-LINK",
+        name: "PAN-Aadhaar Mandatory Linkage Status",
+        publisher: "Central Board of Direct Taxes (CBDT)",
+        access: "Service API (No OTP)",
+        fields: "Operative vs Inoperative tax status based on Aadhaar linkage verification",
+        aha: "Banking Gatekeeper: Prevent demat accounts and neo-banks from onboarding customers whose PAN is legally inoperative.",
+        isGem: false
+      },
+      {
+        id: "id-4",
+        sector: "identity",
+        sectorName: "Identity & Civic",
+        code: "ECI-VOTER-EPIC",
+        name: "Electoral Photo Identity Card (EPIC)",
+        publisher: "Election Commission of India (ECI)",
+        access: "Service API (No OTP)",
+        fields: "EPIC number, voter name, relative name, constituency code, polling station, district, state",
+        aha: "Hyper-Local Civic & Community Apps: Verify local apartment residents and map citizens to exact municipal ward zones.",
+        isGem: false
+      },
+      {
+        id: "id-5",
+        sector: "identity",
+        sectorName: "Identity & Civic",
+        code: "NFSA-RATION-CARD",
+        name: "National Food Security Act Family Roster",
+        publisher: "Department of Food & Public Distribution",
+        access: "Document API (DigiLocker)",
+        fields: "Ration card category (AAY, BPL, PHH), head of family, list of all registered family members, subsidized food quota",
+        aha: "Family Tree Verification for Micro-FinTech: Verify entire household family structure and poverty eligibility for subsidized loans.",
+        isGem: true
+      },
+      {
+        id: "id-6",
+        sector: "identity",
+        sectorName: "Identity & Civic",
+        code: "STATE-CASTE-CERT",
+        name: "State Caste & Non-Creamy Layer Certificate",
+        publisher: "State Revenue Departments / e-District",
+        access: "Document API (DigiLocker)",
+        fields: "Certified caste category (SC, ST, OBC), issuing authority, certificate serial number, non-creamy layer validity",
+        aha: "Quota Fraud Eliminator: University admissions and government contract portals can instantly flag forged caste certificates.",
+        isGem: false
+      },
+      {
+        id: "id-7",
+        sector: "identity",
+        sectorName: "Identity & Civic",
+        code: "STATE-INCOME-CERT",
+        name: "Certified Annual Household Income",
+        publisher: "State Revenue Departments",
+        access: "Document API (DigiLocker)",
+        fields: "Certified annual household income, revenue inspector report number, district magistrate seal",
+        aha: "CSR Grant & Scholarship Matcher: Automate corporate CSR student scholarship disbursements with verified financial need data.",
+        isGem: false
+      },
+      {
+        id: "id-8",
+        sector: "identity",
+        sectorName: "Identity & Civic",
+        code: "MUNICIPAL-BIRTH",
+        name: "Digitally Signed Birth Registration",
+        publisher: "Registrar of Births & Deaths / Municipalities",
+        access: "Document API (DigiLocker)",
+        fields: "Child full name, DOB, place of birth, parents' full names, official civil registration number",
+        aha: "School Admission Automation: Streamline nursery/kindergarten admissions by auto-verifying child age without paper fraud.",
+        isGem: false
+      },
+      {
+        id: "id-9",
+        sector: "identity",
+        sectorName: "Identity & Civic",
+        code: "MUNICIPAL-MARRIAGE",
+        name: "Civil Marriage Registration Certificate",
+        publisher: "Municipal Corporations / Sub-Registrar (IGRS)",
+        access: "Document API (DigiLocker)",
+        fields: "Spouses' names, marriage date, registration date, registrar district",
+        aha: "Family Health Insurance & Joint Mortgages: Automatically verify marital status for spousal insurance additions.",
+        isGem: false
+      },
+
+      // 5. HEALTH & MEDTECH (8 APIs)
+      {
+        id: "health-1",
+        sector: "health",
+        sectorName: "Health & MedTech",
+        code: "NHA-ABHA-ID",
+        name: "Ayushman Bharat 14-Digit Health Account",
+        publisher: "National Health Authority (NHA)",
+        access: "Document API (DigiLocker)",
+        fields: "14-digit ABHA ID, ABHA address, digital consent token, linked health record provider endpoints",
+        aha: "Universal Patient Health Locker: Pull and share encrypted blood tests and MRI scans with doctors without carrying paper folders.",
+        isGem: false
+      },
+      {
+        id: "health-2",
+        sector: "health",
+        sectorName: "Health & MedTech",
+        code: "NHA-PMJAY-GOLD",
+        name: "PM-JAY ₹5 Lakh Cashless Hospital Cover",
+        publisher: "National Health Authority (NHA)",
+        access: "Service API (No OTP)",
+        fields: "Family eligibility status, active ₹5L balance, empanelled network hospitals, pre-authorized surgery package codes",
+        aha: "Hospital Pre-Admission Cashless Desk: Verify patient insurance eligibility in 10 seconds before admission, preventing billing shocks.",
+        isGem: true
+      },
+      {
+        id: "health-3",
+        sector: "health",
+        sectorName: "Health & MedTech",
+        code: "NMC-DOCTOR-LICENSE",
+        name: "National Medical Commission Doctor License",
+        publisher: "National Medical Commission (NMC)",
+        access: "Service API (No OTP)",
+        fields: "State Medical Council registration number, doctor full name, verified qualifications (MBBS, MD, MS), year of passing",
+        aha: "Anti-Quackery Telemedicine & Hospital Credentialing: Ensure every doctor on your healthcare app holds a genuine, active medical license.",
+        isGem: true
+      },
+      {
+        id: "health-4",
+        sector: "health",
+        sectorName: "Health & MedTech",
+        code: "PCI-PHARMACIST-REG",
+        name: "Registered Pharmacist Authority Registry",
+        publisher: "Pharmacy Council of India (PCI)",
+        access: "Service API (No OTP)",
+        fields: "Pharmacist registration number, status (Active), renewal date, registered chemist establishment",
+        aha: "E-Pharmacy Compliance Shield: Ensure prescription medicine orders are checked exclusively by legally licensed pharmacists.",
+        isGem: false
+      },
+      {
+        id: "health-5",
+        sector: "health",
+        sectorName: "Health & MedTech",
+        code: "COWIN-VACCINE-CERT",
+        name: "Digital Immunization & Vaccine Records",
+        publisher: "Ministry of Health & Family Welfare (MoHFW)",
+        access: "Document API (DigiLocker)",
+        fields: "Vaccine brand, batch number, vaccination dates, beneficiary demographics, digital X.509 signature",
+        aha: "Corporate Wellness & International Travel App: Tamper-proof health and vaccination certification with cryptographic audit.",
+        isGem: false
+      },
+      {
+        id: "health-6",
+        sector: "health",
+        sectorName: "Health & MedTech",
+        code: "MSJE-UDID-DISABILITY",
+        name: "Unique Disability Identity Card (UDID)",
+        publisher: "Ministry of Social Justice & Empowerment",
+        access: "Document API (DigiLocker)",
+        fields: "UDID number, disability percentage (e.g. 40%, 80%), disability type (locomotor, visual), concession category",
+        aha: "Accessible Travel & Concession Booking App: Automatically apply statutory railway, flight, and bus discounts for disabled citizens.",
+        isGem: false
+      },
+      {
+        id: "health-7",
+        sector: "health",
+        sectorName: "Health & MedTech",
+        code: "ERAKTKOSH-BLOOD",
+        name: "Real-Time District Blood Bank Inventory",
+        publisher: "e-RaktKosh / Ministry of Health",
+        access: "Open Data API",
+        fields: "Live blood unit stock by blood group (A+, B+, O-, etc.), blood component type (Platelets/Plasma), hospital contact",
+        aha: "Emergency SOS Blood Dispatcher: Route ambulances and families to the exact hospital with available units in seconds.",
+        isGem: false
+      },
+      {
+        id: "health-8",
+        sector: "health",
+        sectorName: "Health & MedTech",
+        code: "NOTTO-ORGAN-DONOR",
+        name: "National Organ & Tissue Donor Pledge",
+        publisher: "NOTTO / Ministry of Health & Family Welfare",
+        access: "Document API (DigiLocker)",
+        fields: "Donor pledge status, pledged organs (cornea, kidneys, liver), emergency family contact details",
+        aha: "Critical Care ICU Alert: Instantly verify patient organ donation wishes during brain death protocols to save multiple lives.",
+        isGem: false
+      },
+
+      // 6. SCHEMES & WELFARE (8 APIs)
+      {
+        id: "sch-1",
+        sector: "schemes",
+        sectorName: "Schemes & Welfare",
+        code: "MYSCHEME-RULE-ENGINE",
+        name: "2,000+ Welfare Scheme Eligibility Algorithms",
+        publisher: "National e-Governance Division (NeGD / MeitY)",
+        access: "Open Data API",
+        fields: "Rule conditions (age, caste, state, gender, income, landholding), scheme benefit values, DBT transfer mode",
+        aha: "SchemeHak: 4 demographic questions $\rightarrow$ shows exact subsidies (e.g., ₹25,000 student laptop, ₹5,000 maternity grant).",
+        isGem: false
+      },
+      {
+        id: "sch-2",
+        sector: "schemes",
+        sectorName: "Schemes & Welfare",
+        code: "MYSCHEME-CHECKLIST",
+        name: "Dynamic Mandatory Document Checklist",
+        publisher: "National e-Governance Division (NeGD)",
+        access: "Open Data API",
+        fields: "List of mandatory certificates and identity proofs required for government application approval",
+        aha: "Middleman-Free Scheme Kiosk: Generate an exact checklist so citizens never get rejected by local bureaucratic offices.",
+        isGem: false
+      },
+      {
+        id: "sch-3",
+        sector: "schemes",
+        sectorName: "Schemes & Welfare",
+        code: "PANCHAYAT-FUNDS",
+        name: "Gram Panchayat Budget & Project Ledger",
+        publisher: "Ministry of Panchayati Raj",
+        access: "Open Data API",
+        fields: "Village panchayat funds allocated, ongoing public works (solar streetlights, borewells, roads), expenditure receipts",
+        aha: "Rural Civic Watchdog: Enable village youth to track whether allocated road funds were actually spent or stolen by contractors.",
+        isGem: false
+      },
+      {
+        id: "sch-4",
+        sector: "schemes",
+        sectorName: "Schemes & Welfare",
+        code: "CPGRAMS-DISPUTE-FILE",
+        name: "Public Grievance Lodging & Officer Tracking",
+        publisher: "Dept of Administrative Reforms & Public Grievances",
+        access: "Service API (No OTP)",
+        fields: "Ministry/Department classification, grievance ticket number, appellate authority timeline, resolution status",
+        aha: "1-Click Citizen Dispute Assistant: Draft and file statutory service-guarantee complaints directly to central ministries.",
+        isGem: false
+      },
+      {
+        id: "sch-5",
+        sector: "schemes",
+        sectorName: "Schemes & Welfare",
+        code: "ESHRAM-GIG-WORK",
+        name: "e-Shram Unorganized & Gig Worker ID",
+        publisher: "Ministry of Labour & Employment",
+        access: "Document API (DigiLocker)",
+        fields: "Universal Account Number (UAN), occupational sub-category (delivery rider, carpenter, domestic cook), social security status",
+        aha: "Gig Worker Micro-Lending & Insurance: Offer ₹15,000 instant emergency credit to food delivery partners backed by e-Shram identity.",
+        isGem: false
+      },
+      {
+        id: "sch-6",
+        sector: "schemes",
+        sectorName: "Schemes & Welfare",
+        code: "PMAY-HOUSING-SANCT",
+        name: "Pradhan Mantri Awas Yojana Housing Status",
+        publisher: "Ministry of Housing & Urban Affairs",
+        access: "Service API (No OTP)",
+        fields: "Beneficiary house sanction ID, construction milestone stage, direct DBT installment release dates",
+        aha: "Rural Construction Material Financing: Supply cement and steel on credit to rural families with sanctioned PMAY grants.",
+        isGem: false
+      },
+      {
+        id: "sch-7",
+        sector: "schemes",
+        sectorName: "Schemes & Welfare",
+        code: "NREGA-WAGE-LOG",
+        name: "MGNREGA 100-Day Wage Disbursement History",
+        publisher: "Ministry of Rural Development",
+        access: "Open Data API",
+        fields: "Household job card number, days of work completed, daily wage dues, bank transfer disbursement credit status",
+        aha: "Rural Alternative Credit Scoring: Underwrite micro-fertilizer loans based on regular MGNREGA government wage receipts.",
+        isGem: false
+      },
+      {
+        id: "sch-8",
+        sector: "schemes",
+        sectorName: "Schemes & Welfare",
+        code: "RTI-ONLINE-APP",
+        name: "Right to Information Application Tracking",
+        publisher: "Department of Personnel & Training (DoPT)",
+        access: "Service API (No OTP)",
+        fields: "RTI registration number, public authority name, PIO response status, first appeal filing date",
+        aha: "Corporate & NGO RTI Tracker: Automatically manage and follow up on hundreds of transparency petitions for legal teams.",
+        isGem: false
+      },
+
+      // 7. LAND & COURTS (8 APIs)
+      {
+        id: "land-1",
+        sector: "land",
+        sectorName: "Land & Courts",
+        code: "ECOURTS-CASE-CNR",
+        name: "16-Character CNR Case Status (3,000+ Courts)",
+        publisher: "e-Courts Mission Mode Project",
+        access: "Service API (No OTP)",
+        fields: "Case type, CNR number, filing date, petitioner & respondent names, current procedural stage across District & High Courts",
+        aha: "Litigation Risk Engine: Automatically check if a prospective business partner or vendor is fighting active fraud or cheque-bounce cases.",
+        isGem: true
+      },
+      {
+        id: "land-2",
+        sector: "land",
+        sectorName: "Land & Courts",
+        code: "ECOURTS-CAUSELIST",
+        name: "Daily Court Hearing Cause Lists",
+        publisher: "e-Courts Project",
+        access: "Open Data API",
+        fields: "Next hearing date, courtroom number, presiding judge/bench, serial position on daily board",
+        aha: "Pocket Legal Clerk for Lawyers: Morning WhatsApp alert reminding advocates of their courtroom serial numbers across city courts.",
+        isGem: false
+      },
+      {
+        id: "land-3",
+        sector: "land",
+        sectorName: "Land & Courts",
+        code: "ECOURTS-ORDERS",
+        name: "Interim Stay Orders & Disposed Judgments",
+        publisher: "e-Courts Project / Supreme Court",
+        access: "Service API (No OTP)",
+        fields: "Order release dates, interim injunction / stay order flags, machine-readable judgment text (PDF)",
+        aha: "Real Estate Stay-Order Monitor: Instantly alert property buyers if a Civil Court has placed an active injunction on a land parcel.",
+        isGem: false
+      },
+      {
+        id: "land-4",
+        sector: "land",
+        sectorName: "Land & Courts",
+        code: "BHULEKH-712-ROR",
+        name: "Land Record Title & Khatauni / Record of Rights",
+        publisher: "State Revenue Departments (UP, MH, KA, TS, AP, WB)",
+        access: "Document API (DigiLocker)",
+        fields: "Survey number, Hissa number, registered owner name, total area (acres/hectares), soil classification, crop history",
+        aha: "Farmland Purchase Diligence: Verify actual recorded owner names before paying cash tokens for agricultural land purchases.",
+        isGem: false
+      },
+      {
+        id: "land-5",
+        sector: "land",
+        sectorName: "Land & Courts",
+        code: "LAND-NA-CONVERSION",
+        name: "Agricultural to Non-Agricultural (NA) Land Status",
+        publisher: "State Revenue & Town Planning Departments",
+        access: "Service API (No OTP)",
+        fields: "NA conversion order number, approved land use (Residential, Commercial, Industrial), layout sanction number",
+        aha: "Plot Buyer Shield: Prevent middle-class families from buying illegal residential plots laid out on unapproved farmland.",
+        isGem: false
+      },
+      {
+        id: "land-6",
+        sector: "land",
+        sectorName: "Land & Courts",
+        code: "SUB-REGISTRAR-EC",
+        name: "15–30 Year Registered Encumbrance Certificate",
+        publisher: "Sub-Registrar Registration Departments (IGRS)",
+        access: "Service API (No OTP)",
+        fields: "Historical registered sale deeds, mortgage transactions, court attachment orders across 15–30 years",
+        aha: "10-Minute Home Loan Title Search: Replace ₹15,000 manual legal searches with instant digital title chain verification.",
+        isGem: false
+      },
+      {
+        id: "land-7",
+        sector: "land",
+        sectorName: "Land & Courts",
+        code: "LAND-MUTATION-OBJ",
+        name: "Land Mutation Status & Recorded Public Objections",
+        publisher: "State Revenue Departments",
+        access: "Service API (No OTP)",
+        fields: "Mutation application number, 30-day statutory notice period status, recorded neighbor objections, revenue entry",
+        aha: "Ancestral Land Watchdog: SMS alert to city-dwelling owners if anyone applies for a fraudulent mutation on their village land!",
+        isGem: true
+      },
+      {
+        id: "land-8",
+        sector: "land",
+        sectorName: "Land & Courts",
+        code: "CCTNS-POLICE-VER",
+        name: "Police Verification & Character Certificates",
+        publisher: "Crime and Criminal Tracking Network (CCTNS / Police)",
+        access: "Service API (No OTP)",
+        fields: "Police verification certificate status, criminal record clearance flag (non-sensitive)",
+        aha: "Domestic Staff & Security Guard Background Screening: Ensure drivers, maids, and guards have verified clear police records.",
+        isGem: false
+      },
+
+      // 8. AGRI & UTILITIES (8 APIs)
+      {
+        id: "agri-1",
+        sector: "agriculture",
+        sectorName: "Agri & Utilities",
+        code: "ENAM-MANDI-RATES",
+        name: "Real-Time Daily APMC Mandi Rates & Arrivals",
+        publisher: "e-NAM / Small Farmers' Agri-Business Consortium",
+        access: "Open Data API",
+        fields: "Market name, commodity (Wheat, Onion, Tomato, Cotton), arrival volume (quintals), minimum, maximum, and modal price",
+        aha: "Mandi Arbitrage & Procurement Assistant: Alert FMCG companies and farmers when prices in a neighboring mandi are 20% higher.",
+        isGem: true
+      },
+      {
+        id: "agri-2",
+        sector: "agriculture",
+        sectorName: "Agri & Utilities",
+        code: "SOIL-HEALTH-CARD",
+        name: "Soil Nutrient Test & Fertilizer Dosage Records",
+        publisher: "Ministry of Agriculture & Farmers Welfare",
+        access: "Document API (DigiLocker)",
+        fields: "Sample test date, Nitrogen (N), Phosphorus (P), Potassium (K), micronutrients (Zinc, Iron), pH level, crop recommendations",
+        aha: "Hyper-Local Agri-Input App: Tell farmers the exact fertilizer bag needed instead of wasting money on excess toxic urea.",
+        isGem: true
+      },
+      {
+        id: "agri-3",
+        sector: "agriculture",
+        sectorName: "Agri & Utilities",
+        code: "PM-KISAN-DBT",
+        name: "PM-KISAN Farmer Direct Benefit Ledger",
+        publisher: "Ministry of Agriculture",
+        access: "Service API (No OTP)",
+        fields: "Farmer beneficiary registration, Aadhaar bank seeding flag, installment 1 to 17 payment credit dates",
+        aha: "Rural Credit Underwriting: Use regular PM-KISAN government DBT receipts as alternative credit scoring for micro-tractor loans.",
+        isGem: false
+      },
+      {
+        id: "agri-4",
+        sector: "agriculture",
+        sectorName: "Agri & Utilities",
+        code: "PMFBY-CROP-INS",
+        name: "PM Fasal Bima Yojana Crop Insurance Claims",
+        publisher: "Ministry of Agriculture",
+        access: "Service API (No OTP)",
+        fields: "Insurance policy number, insured crop, acreage, weather index threshold, claim settlement approval status",
+        aha: "Crop Loss Claim Tracking Portal: Eliminate 6-month bureaucratic delays for farmers suffering from drought or flood losses.",
+        isGem: false
+      },
+      {
+        id: "agri-5",
+        sector: "agriculture",
+        sectorName: "Agri & Utilities",
+        code: "DISCOM-ELECTRICITY",
+        name: "Power Consumer Metering, Slabs & Arrears",
+        publisher: "State Electricity Distribution Companies (DISCOMs)",
+        access: "Service API (No OTP)",
+        fields: "Consumer number, sanctioned load (kW), meter reading, current bill amount, overdue arrears, disconnection notice flag",
+        aha: "Tenant Electricity Overcharge Auditor: Catch landlords illegally charging tenants ₹10–12/unit when official tariff is ₹5.50.",
+        isGem: false
+      },
+      {
+        id: "agri-6",
+        sector: "agriculture",
+        sectorName: "Agri & Utilities",
+        code: "CGD-PIPED-GAS",
+        name: "Piped Natural Gas (PNG) & LPG Refill Master",
+        publisher: "Petroleum & Natural Gas Board / Oil PSUs",
+        access: "Service API (No OTP)",
+        fields: "Consumer ID, active pipeline connection, subsidized LPG refill count, distributor agency name",
+        aha: "Verified Address & Residence Proof: Alternative utility verification proof for neo-banking and tenant onboarding.",
+        isGem: false
+      },
+      {
+        id: "agri-7",
+        sector: "agriculture",
+        sectorName: "Agri & Utilities",
+        code: "MUNICIPAL-TAX-DUE",
+        name: "Municipal Property Tax Assessment & Dues",
+        publisher: "Urban Local Bodies / Municipal Corporations",
+        access: "Service API (No OTP)",
+        fields: "Property assessment number, built-up area (sq ft), commercial vs residential slab, unpaid tax dues",
+        aha: "Tenant & Buyer Property Tax Diligence: Check if a commercial building has ₹5 Lakh in unpaid municipal tax arrears before signing lease.",
+        isGem: false
+      },
+      {
+        id: "agri-8",
+        sector: "agriculture",
+        sectorName: "Agri & Utilities",
+        code: "JAL-JEEVAN-TAP",
+        name: "Functional Household Tap Water Connection",
+        publisher: "Ministry of Jal Shakti",
+        access: "Open Data API",
+        fields: "Village census code, household connection status, water supply frequency, potability certification",
+        aha: "Rural Living Standard Index: Analyze village tap water penetration for public health research and targeted CSR funding.",
+        isGem: false
       }
-    };
+    ];
 
-    function renderSector(key) {
-      const data = sectorData[key];
-      const container = document.getElementById('sectorDisplay');
-      container.innerHTML = `
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2.5 border-b border-white/10">
-          <div>
-            <h3 class="text-xs sm:text-sm font-bold text-white font-mono">${data.title}</h3>
-            <p class="text-[11px] text-slate-400 mt-0.5">Publishers: <span class="text-slate-200 font-medium">${data.publishers}</span></p>
+    let currentSector = 'all';
+    let onlyGems = false;
+    let searchQuery = '';
+
+    function renderApis() {
+      const container = document.getElementById('apiListContainer');
+      const counter = document.getElementById('searchCounter');
+      
+      let filtered = allApis.filter(api => {
+        // Sector filter
+        if (currentSector !== 'all' && api.sector !== currentSector) return false;
+        // Gems filter
+        if (onlyGems && !api.isGem) return false;
+        // Search query
+        if (searchQuery.trim() !== '') {
+          const q = searchQuery.toLowerCase();
+          const matchCode = api.code.toLowerCase().includes(q);
+          const matchName = api.name.toLowerCase().includes(q);
+          const matchPub = api.publisher.toLowerCase().includes(q);
+          const matchFields = api.fields.toLowerCase().includes(q);
+          const matchAha = api.aha.toLowerCase().includes(q);
+          const matchSector = api.sectorName.toLowerCase().includes(q);
+          return matchCode || matchName || matchPub || matchFields || matchAha || matchSector;
+        }
+        return true;
+      });
+
+      counter.innerText = `${filtered.length} of ${allApis.length} APIs`;
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="sm:col-span-2 p-8 text-center bg-white/5 rounded-xl border border-white/10 space-y-2">
+            <span class="text-2xl">🔍</span>
+            <div class="text-sm font-bold text-white">No APIs match your search</div>
+            <p class="text-xs text-slate-400">Try searching for broader keywords like "tax", "doctor", "land", "court", "degree", or "vehicle".</p>
+            <button onclick="resetFilters()" class="px-3 py-1 text-xs font-mono bg-white/10 hover:bg-white/20 text-emerald-400 rounded-lg transition-all">Clear Search</button>
           </div>
-          <span class="px-2.5 py-0.5 text-[10px] font-mono font-bold rounded-full border ${data.badgeColor} shrink-0 self-start sm:self-auto">${data.badge}</span>
-        </div>
-        
-        <!-- Brainstorming Sparks Banner -->
-        <div class="p-2.5 rounded-lg bg-indigo-500/10 border border-indigo-500/30 text-xs text-indigo-300 flex items-start gap-2">
-          <span class="font-mono font-bold text-[10px] uppercase tracking-wider text-indigo-400 shrink-0 mt-0.5">💡 Brainstorming Sparks:</span>
-          <span class="font-medium">${data.sparks}</span>
-        </div>
+        `;
+        return;
+      }
 
-        <div class="grid sm:grid-cols-2 gap-2 pt-1">
-          ${data.dataPoints.map(dp => `
-            <div class="p-2.5 rounded-lg bg-black/40 border border-white/10 space-y-0.5 card-touch">
-              <span class="text-xs font-bold text-white block">${dp.name}</span>
-              <span class="text-[11px] text-slate-400 block leading-tight">${dp.desc}</span>
+      container.innerHTML = filtered.map(api => `
+        <div class="p-4 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 space-y-2.5 card-touch flex flex-col justify-between">
+          <div class="space-y-2">
+            <!-- Header Badges -->
+            <div class="flex items-center justify-between gap-1.5 flex-wrap">
+              <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-white/10 text-slate-200 border border-white/15">${api.code}</span>
+              <div class="flex items-center gap-1.5">
+                ${api.isGem ? `<span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 animate-pulse">⚡ TOP AHA GEM</span>` : ''}
+                <span class="px-2 py-0.5 text-[10px] font-mono rounded ${
+                  api.access.includes('Service') ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' :
+                  api.access.includes('Document') ? 'bg-purple-500/20 text-purple-300 border border-purple-500/30' :
+                  'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
+                }">${api.access}</span>
+              </div>
             </div>
-          `).join('')}
+
+            <!-- API Title & Publisher -->
+            <div>
+              <h3 class="text-sm font-bold text-white tracking-tight">${api.name}</h3>
+              <p class="text-[11px] text-slate-400 mt-0.5 font-medium">Source: <span class="text-slate-200">${api.publisher}</span></p>
+            </div>
+
+            <!-- Data Fields Payload -->
+            <div class="p-2 bg-black/40 rounded-lg border border-white/5 text-[11px] font-mono text-slate-300 space-y-0.5">
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider block">MACHINE-READABLE FIELDS:</span>
+              <p class="leading-relaxed text-slate-300">${api.fields}</p>
+            </div>
+          </div>
+
+          <!-- The AHA! Moment Callout -->
+          <div class="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-xs space-y-1">
+            <div class="flex items-center gap-1 text-[10px] font-mono font-extrabold uppercase tracking-wider text-emerald-400">
+              <span>💡 AHA! WHAT YOU CAN BUILD:</span>
+            </div>
+            <p class="text-slate-200 font-medium leading-relaxed">${api.aha}</p>
+          </div>
         </div>
-      `;
+      `).join('');
     }
 
-    function selectSector(key) {
+    function handleSearch(val) {
+      searchQuery = val;
+      renderApis();
+    }
+
+    function selectSector(sec) {
+      currentSector = sec;
+      onlyGems = false;
+      document.getElementById('gemToggleBtn').classList.remove('bg-amber-400', 'text-slate-900');
+      document.getElementById('gemToggleBtn').classList.add('bg-amber-500/10', 'text-amber-300');
+
       const buttons = document.querySelectorAll('#sectorChips button');
       buttons.forEach(btn => {
-        if (btn.getAttribute('data-sector') === key) {
+        if (btn.getAttribute('data-sector') === sec) {
           btn.className = "px-3 py-1.5 text-xs font-medium rounded-lg transition-all active-pill border border-transparent shrink-0";
         } else {
           btn.className = "px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0";
         }
       });
-      renderSector(key);
+      renderApis();
     }
 
-    // Initialize with Finance
-    renderSector('finance');
+    function toggleGemsFilter() {
+      onlyGems = !onlyGems;
+      const btn = document.getElementById('gemToggleBtn');
+      if (onlyGems) {
+        btn.className = "px-3 py-2 text-xs font-mono font-bold bg-amber-400 text-slate-900 rounded-xl shadow-lg transition-all flex items-center gap-1.5 scale-105";
+        btn.innerHTML = "<span>✓ Showing Top 10 Aha! Gems</span>";
+      } else {
+        btn.className = "px-3 py-2 text-xs font-mono font-bold bg-amber-500/10 text-amber-300 border border-amber-500/30 rounded-xl hover:bg-amber-500/20 active:scale-95 transition-all flex items-center gap-1.5 shadow-sm";
+        btn.innerHTML = "<span>⚡ Top 10 'Aha!' Hidden Gems</span>";
+      }
+      renderApis();
+    }
+
+    function resetFilters() {
+      searchQuery = '';
+      document.getElementById('apiSearchInput').value = '';
+      currentSector = 'all';
+      onlyGems = false;
+      selectSector('all');
+    }
+
+    // Initialize with all APIs
+    renderApis();
 
     function copyDeck() {
       const text = `*API Setu Founder Visual Deck:*\n🌐 View Live: https://rohitsbag.github.io/apisetu-founder-deck/\n\nGovt of India's Open API Gateway (2,940 Publishers, 9,163 Live APIs across 17+ Sectors).\n\n• *The Economic Shift:* 7-21 days manual checks & ₹2,000 cost ➔ 0.4s instant & ₹5/check at 95% net margins.\n\n• *5 Ready Product Blueprints:*\n  1. VyaparRadar (MSME Vendor Due-Diligence — ₹499/mo SaaS)\n  2. VeriDegree (10-Second Candidate Marksheet/Degree BGV — ₹99/audit)\n  3. SchemeHak (Automated Welfare & Grant Matcher — CSR/Colleges)\n  4. VahanDossier (Used Vehicle Lemon & Loan Checker — ₹49/report)\n  5. TrustPass (Privacy-Preserving Tenant & Staff QR Verification — RWAs)\n\n• *Execution:* 1-3 days mock prototype, 3-7 days sandbox testing (sandbox.api-setu.in), then launch!`;
