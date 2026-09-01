@@ -100,27 +100,36 @@
     <div class="hero-abstract-bg"></div>
 
     <!-- TOP APP BAR -->
-    <header class="border-b border-white/10 bg-[#0c0e14]/80 backdrop-blur-xl sticky top-0 z-40">
-      <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+    <header class="border-b border-white/10 bg-[#080b11]/85 backdrop-blur-xl sticky top-0 z-40">
+      <div class="max-w-6xl mx-auto px-4 sm:px-5 h-14 flex items-center justify-between">
+        
+        <!-- Left: Clean Identity -->
         <div class="flex items-center gap-2.5">
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono font-bold bg-white/10 text-emerald-400 border border-white/10">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            API SETU // GOVT OF INDIA
-          </span>
-          <span class="text-white/20">/</span>
-          <span class="text-xs text-slate-300 font-semibold truncate max-w-[170px] sm:max-w-none">Founder Intelligence</span>
+          <div class="w-7 h-7 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-sm font-bold text-white tracking-tight">Govt Data Playbook</span>
+            <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/25 hidden sm:inline font-semibold">Founder Briefing</span>
+          </div>
         </div>
 
-        <div class="flex items-center gap-2">
-          <a href="https://sandbox.api-setu.in" target="_blank" class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 rounded-lg hover:bg-emerald-500/20 transition-colors">
-            <span>Instant Sandbox ↗</span>
-          </a>
-          <button onclick="copyDeck()" id="copyBtn" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-white text-slate-900 active:bg-slate-200 rounded-lg transition-all shadow-md font-mono">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
-            <span class="hidden sm:inline">Copy for WhatsApp</span>
-            <span class="sm:hidden">Share</span>
-          </button>
+        <!-- Center / Right: Clean Section Quick Links -->
+        <nav class="hidden md:flex items-center gap-1 text-xs font-medium text-slate-300">
+          <a href="#sec-overview" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all">Overview</a>
+          <a href="#sec-moats" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all">Why It Wins</a>
+          <a href="#sec-catalog" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all">70+ APIs</a>
+          <a href="#sec-calculator" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all">Profit Model</a>
+          <a href="#sec-ideas" class="px-3 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/20 transition-all font-semibold">5 Product Ideas</a>
+        </nav>
+
+        <!-- Right: Mobile Pill Badge -->
+        <div class="md:hidden">
+          <span class="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/30">
+            70+ APIs
+          </span>
         </div>
+
       </div>
     </header>
 
