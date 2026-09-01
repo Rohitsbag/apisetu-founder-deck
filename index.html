@@ -400,7 +400,7 @@
             </div>
             <h2 class="text-xl sm:text-2xl font-extrabold text-white mt-1">Sovereign APIs & Opportunity Directory</h2>
             <p class="text-xs text-slate-400 mt-0.5 max-w-xl">
-              High-signal registries from Central & State ministries. Tap any category to inspect data schemas and ventures.
+              High-signal registries from Central & State ministries. Scan <span class="text-slate-200 font-semibold">what data you get</span> and <span class="text-emerald-400 font-semibold">what you can build</span>.
             </p>
           </div>
           <div class="flex items-center gap-2 shrink-0">
@@ -1965,12 +1965,12 @@
               </div>
               <h3 class="text-xs sm:text-sm font-bold text-white tracking-tight leading-snug">${api.name}</h3>
               <p class="text-[10px] text-slate-400 truncate">Source: <span class="text-slate-300">${api.publisher}</span></p>
-              <p class="text-[10px] font-mono text-slate-400 truncate bg-black/40 px-2 py-1 rounded border border-white/5">
-                <span class="text-slate-500 uppercase text-[9px] mr-1">DATA:</span>${api.fields}
-              </p>
+              <div class="text-[10px] text-slate-300 truncate bg-black/40 px-2 py-1 rounded border border-white/5">
+                <span class="text-slate-400 font-semibold mr-1">Data You Get:</span><span class="text-slate-300">${api.fields}</span>
+              </div>
             </div>
             <div class="p-2 rounded-lg bg-emerald-950/40 border border-emerald-500/25 text-xs text-slate-200">
-              <span class="text-emerald-400 font-bold font-mono text-[9px] uppercase tracking-wider block mb-0.5">💡 BUILD THIS:</span>
+              <span class="text-emerald-400 font-bold font-mono text-[9px] uppercase tracking-wider block mb-0.5">💡 WHAT YOU CAN BUILD:</span>
               <p class="leading-tight text-[11px] font-medium">${api.aha}</p>
             </div>
           </div>
@@ -2011,12 +2011,12 @@
               </div>
               <h3 class="text-xs sm:text-sm font-bold text-white tracking-tight leading-snug">${ds.name}</h3>
               <p class="text-[10px] text-purple-300 font-mono truncate">Scale: ${ds.volume}</p>
-              <p class="text-[10px] font-mono text-slate-400 truncate bg-black/40 px-2 py-1 rounded border border-white/5">
-                <span class="text-slate-500 uppercase text-[9px] mr-1">COLUMNS:</span>${ds.fields}
-              </p>
+              <div class="text-[10px] text-slate-300 truncate bg-black/40 px-2 py-1 rounded border border-white/5">
+                <span class="text-purple-300 font-semibold mr-1">Data You Get:</span><span class="text-slate-300">${ds.fields}</span>
+              </div>
             </div>
             <div class="p-2 rounded-lg bg-purple-950/40 border border-purple-500/25 text-xs text-slate-200">
-              <span class="text-purple-300 font-bold font-mono text-[9px] uppercase tracking-wider block mb-0.5">💡 SAAS VENTURE:</span>
+              <span class="text-purple-300 font-bold font-mono text-[9px] uppercase tracking-wider block mb-0.5">💡 WHAT YOU CAN BUILD:</span>
               <p class="leading-tight text-[11px] font-medium">${ds.aha}</p>
             </div>
           </div>
@@ -2056,12 +2056,12 @@
               </div>
               <h3 class="text-xs sm:text-sm font-bold text-white tracking-tight leading-snug">${us.name}</h3>
               <p class="text-[10px] text-slate-300 font-mono truncate">Built: <span class="text-cyan-300">${us.unicorns}</span></p>
-              <p class="text-[10px] font-mono text-slate-400 truncate bg-black/40 px-2 py-1 rounded border border-white/5">
-                <span class="text-slate-500 uppercase text-[9px] mr-1">DATA:</span>${us.fields}
-              </p>
+              <div class="text-[10px] text-slate-300 truncate bg-black/40 px-2 py-1 rounded border border-white/5">
+                <span class="text-cyan-300 font-semibold mr-1">Data You Get:</span><span class="text-slate-300">${us.fields}</span>
+              </div>
             </div>
             <div class="p-2 rounded-lg bg-cyan-950/40 border border-cyan-400/25 text-xs text-slate-200">
-              <span class="text-cyan-300 font-bold font-mono text-[9px] uppercase tracking-wider block mb-0.5">💡 USD SAAS PLAY:</span>
+              <span class="text-cyan-300 font-bold font-mono text-[9px] uppercase tracking-wider block mb-0.5">💡 WHAT YOU CAN BUILD:</span>
               <p class="leading-tight text-[11px] font-medium">${us.aha}</p>
             </div>
           </div>
