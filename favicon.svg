@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bridgeGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#34D399" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <!-- Dark Rounded Container -->
+  <rect width="64" height="64" rx="14" fill="#0c0e14" />
+  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+  
+  <!-- "Setu" (Bridge) Architectural Arch -->
+  <path d="M15 43 C 21 27, 43 27, 49 43" fill="none" stroke="url(#bridgeGrad)" stroke-width="4.5" stroke-linecap="round" filter="url(#glow)" />
+  <path d="M22 43 C 26 33, 38 33, 42 43" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2.5" stroke-linecap="round" />
+  
+  <!-- Network Central Node -->
+  <circle cx="32" cy="20" r="4.5" fill="#10B981" />
+  <circle cx="32" cy="20" r="7.5" fill="none" stroke="#10B981" stroke-opacity="0.4" stroke-width="2" />
+  
+  <!-- Base Anchor Points -->
+  <circle cx="16" cy="43" r="3" fill="#FFFFFF" />
+  <circle cx="48" cy="43" r="3" fill="#FFFFFF" />
+</svg>
