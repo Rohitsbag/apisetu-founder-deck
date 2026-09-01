@@ -395,50 +395,54 @@
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
           <div>
             <div class="flex items-center gap-2 flex-wrap">
-              <span class="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30 uppercase tracking-wider">05 // SOVEREIGN INTELLIGENCE PLATFORM</span>
-              <span class="text-[10px] font-mono text-cyan-300 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/30">INDIA & GLOBAL BENCHMARKS</span>
+              <span class="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded border border-emerald-500/30 uppercase tracking-wider">05 // SOVEREIGN INTELLIGENCE PLATFORM</span>
+              <span class="text-[10px] font-mono text-cyan-300 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/30 font-medium">INDIA & GLOBAL BENCHMARKS</span>
             </div>
-            <h2 class="text-xl sm:text-2xl font-extrabold text-white mt-1">Sovereign APIs, Master Databases & Global "Aha!" Blueprints</h2>
-            <p class="text-xs text-slate-300 mt-0.5 max-w-2xl leading-relaxed">
-              Explore 70+ live Indian APIs, 10 national bulk databases, and 8 multi-billion-dollar US sovereign benchmarks (api.data.gov). Every single item highlights the verified source, raw data schema, and the exact 💡 <span class="text-emerald-400 font-semibold">"Aha!" startup</span> you can build.
+            <h2 class="text-xl sm:text-2xl font-extrabold text-white mt-1">Sovereign APIs, Master Databases & Global Blueprints</h2>
+            <p class="text-xs text-slate-400 mt-0.5 max-w-2xl leading-relaxed">
+              Explore 70+ live Indian APIs, 10 national bulk databases, and 8 multi-billion-dollar US sovereign benchmarks (api.data.gov). Every card highlights the verified source, raw data schema, and the exact <span class="text-emerald-400 font-semibold">venture blueprint</span> you can build.
             </p>
           </div>
           <div class="flex items-center gap-2 shrink-0">
-            <button onclick="toggleGemsFilter()" id="gemToggleBtn" class="px-3 py-2 text-xs font-mono font-bold bg-amber-500/10 text-amber-300 border border-amber-500/30 rounded-xl hover:bg-amber-500/20 active:scale-95 transition-all flex items-center gap-1.5 shadow-sm">
-              <span>⚡ Top 10 "Aha!" Hidden Gems</span>
+            <button onclick="toggleGemsFilter()" id="gemToggleBtn" class="px-3.5 py-2 text-xs font-mono font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/30 rounded-xl hover:bg-amber-500/20 active:scale-98 transition-all flex items-center gap-2 shadow-sm">
+              <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <span>Top 10 Hidden Gems</span>
             </button>
           </div>
         </div>
 
-        <!-- 3 PRIMARY PLATFORM MODE TABS -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 p-1.5 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10" id="platformModeTabs">
-          <button onclick="switchMode('apis')" id="tabModeApis" class="p-2.5 rounded-xl text-left transition-all bg-emerald-500/20 border border-emerald-500/40 text-white shadow-sm flex items-center justify-between">
+        <!-- 3 PRIMARY PLATFORM MODE TABS (LINEAR-TIER SEGMENTED CONTROL) -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 p-1.5 bg-black/40 backdrop-blur-md rounded-2xl border border-white/10" id="platformModeTabs">
+          <button onclick="switchMode('apis')" id="tabModeApis" class="p-3 rounded-xl text-left transition-all bg-emerald-500/15 border border-emerald-500/40 text-white shadow-sm flex items-center justify-between">
             <div>
               <div class="text-xs font-bold flex items-center gap-1.5">
-                <span>🇮🇳 1. India Sovereign APIs</span>
-                <span class="px-1.5 py-0.2 text-[9px] font-mono bg-emerald-400/20 text-emerald-300 rounded font-bold">70+ Endpoints</span>
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>1. India Sovereign APIs</span>
+                <span class="px-1.5 py-0.2 text-[9px] font-mono bg-emerald-400/20 text-emerald-300 rounded font-semibold">70+ Endpoints</span>
               </div>
-              <p class="text-[10px] text-slate-300 mt-0.5 font-mono">API Setu & NAPIX Live Queries</p>
+              <p class="text-[10px] text-slate-400 mt-0.5 font-mono">API Setu & NAPIX Live Queries</p>
             </div>
-            <span class="text-xs text-emerald-400 font-mono">● Active</span>
+            <span class="text-xs text-emerald-400 font-mono font-semibold">Active</span>
           </button>
 
-          <button onclick="switchMode('datasets')" id="tabModeDatasets" class="p-2.5 rounded-xl text-left transition-all bg-white/5 border border-transparent hover:bg-white/10 text-slate-300 flex items-center justify-between">
+          <button onclick="switchMode('datasets')" id="tabModeDatasets" class="p-3 rounded-xl text-left transition-all bg-white/[0.02] border border-transparent hover:bg-white/5 text-slate-300 flex items-center justify-between">
             <div>
               <div class="text-xs font-bold flex items-center gap-1.5 text-white">
-                <span>📦 2. India Master Databases</span>
-                <span class="px-1.5 py-0.2 text-[9px] font-mono bg-purple-400/20 text-purple-300 rounded font-bold">10 Bulk Registries</span>
+                <svg class="w-3.5 h-3.5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+                <span>2. India Master Databases</span>
+                <span class="px-1.5 py-0.2 text-[9px] font-mono bg-purple-400/20 text-purple-300 rounded font-semibold">10 Bulk Registries</span>
               </div>
               <p class="text-[10px] text-slate-400 mt-0.5 font-mono">OGD, MCA, NJDG, Bhuvan & Census</p>
             </div>
             <span class="text-xs text-slate-500 font-mono">Explore →</span>
           </button>
 
-          <button onclick="switchMode('us')" id="tabModeUs" class="p-2.5 rounded-xl text-left transition-all bg-white/5 border border-transparent hover:bg-white/10 text-slate-300 flex items-center justify-between">
+          <button onclick="switchMode('us')" id="tabModeUs" class="p-3 rounded-xl text-left transition-all bg-white/[0.02] border border-transparent hover:bg-white/5 text-slate-300 flex items-center justify-between">
             <div>
               <div class="text-xs font-bold flex items-center gap-1.5 text-white">
-                <span>🇺🇸 3. US Federal Benchmarks</span>
-                <span class="px-1.5 py-0.2 text-[9px] font-mono bg-cyan-400/20 text-cyan-300 rounded font-bold">api.data.gov</span>
+                <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                <span>3. US Federal Benchmarks</span>
+                <span class="px-1.5 py-0.2 text-[9px] font-mono bg-cyan-400/20 text-cyan-300 rounded font-semibold">api.data.gov</span>
               </div>
               <p class="text-[10px] text-slate-400 mt-0.5 font-mono">17 U.S.C. § 105 Zero-CAC SaaS</p>
             </div>
@@ -451,7 +455,7 @@
           <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           </div>
-          <input type="text" id="apiSearchInput" oninput="handleSearch(this.value)" placeholder="Search across 70+ APIs, 10 Master Datasets & US Benchmarks (e.g. GST, doctor, SEC, land, satellite, FDA, weather, tender)..." class="w-full bg-black/50 border border-white/15 rounded-xl pl-10 pr-28 py-3 text-xs sm:text-sm text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-all font-mono shadow-inner">
+          <input type="text" id="apiSearchInput" oninput="handleSearch(this.value)" placeholder="Search across 70+ APIs, 10 Master Datasets & US Benchmarks (e.g. GST, doctor, SEC, land, satellite, FDA, weather, tender)..." class="w-full bg-black/50 border border-white/15 rounded-xl pl-10 pr-28 py-3 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-all font-mono shadow-inner">
           <div id="searchCounter" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-[11px] font-mono text-emerald-400 font-bold"></div>
         </div>
 
@@ -459,7 +463,7 @@
         <div id="modeExplainerBanner" class="hidden p-3 rounded-xl text-xs space-y-1"></div>
 
         <!-- Horizontal Scrollable Sector Bar (Only for Mode 1: India APIs) -->
-        <div class="flex gap-1.5 overflow-x-auto no-scrollbar pb-1 bg-white/5 backdrop-blur-md p-1.5 rounded-xl border border-white/10" id="sectorChips">
+        <div class="flex gap-1.5 overflow-x-auto no-scrollbar pb-1 bg-white/[0.03] backdrop-blur-md p-1.5 rounded-xl border border-white/10" id="sectorChips">
           <button onclick="selectSector('all')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all active-pill border border-transparent shrink-0" data-sector="all">All APIs (70+)</button>
           <button onclick="selectSector('finance')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0" data-sector="finance">1. Finance & Tax (10)</button>
           <button onclick="selectSector('transport')" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-slate-300 hover:text-white border border-transparent shrink-0" data-sector="transport">2. Transport & Fleet (9)</button>
@@ -505,23 +509,23 @@
           </div>
         </div>
 
-        <!-- Output Metric Cards -->
+        <!-- Output Metric Cards (Data-Driven Right-Aligned Place Values) -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-          <div class="p-3 bg-black/40 rounded-lg border border-white/10 text-center">
-            <span class="text-[10px] font-mono text-slate-400 uppercase block">Monthly Queries</span>
-            <span class="text-base sm:text-lg font-bold text-white" id="monthlyQueries">15,000</span>
+          <div class="p-3.5 bg-black/40 rounded-xl border border-white/10 flex flex-col justify-between">
+            <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Monthly Volume</span>
+            <span class="text-base sm:text-xl font-bold text-white text-right font-mono mt-2" id="monthlyQueries">15,000</span>
           </div>
-          <div class="p-3 bg-black/40 rounded-lg border border-white/10 text-center">
-            <span class="text-[10px] font-mono text-slate-400 uppercase block">Revenue (@ ₹49)</span>
-            <span class="text-base sm:text-lg font-bold text-emerald-400" id="monthlyRevenue">₹7,35,000</span>
+          <div class="p-3.5 bg-black/40 rounded-xl border border-white/10 flex flex-col justify-between">
+            <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Gross Rev (@ ₹49)</span>
+            <span class="text-base sm:text-xl font-bold text-emerald-400 text-right font-mono mt-2" id="monthlyRevenue">₹7,35,000</span>
           </div>
-          <div class="p-3 bg-black/40 rounded-lg border border-white/10 text-center">
-            <span class="text-[10px] font-mono text-slate-400 uppercase block">API Cost</span>
-            <span class="text-base sm:text-lg font-bold text-slate-300" id="monthlyCost">₹12,000</span>
+          <div class="p-3.5 bg-black/40 rounded-xl border border-white/10 flex flex-col justify-between">
+            <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Sovereign API Cost</span>
+            <span class="text-base sm:text-xl font-bold text-slate-300 text-right font-mono mt-2" id="monthlyCost">₹12,000</span>
           </div>
-          <div class="p-3 bg-emerald-950/40 rounded-lg border border-emerald-500/40 text-center">
-            <span class="text-[10px] font-mono text-emerald-400 uppercase block">Net Profit</span>
-            <span class="text-base sm:text-lg font-extrabold text-emerald-300" id="monthlyProfit">₹7,23,000</span>
+          <div class="p-3.5 bg-emerald-950/30 rounded-xl border border-emerald-500/30 flex flex-col justify-between">
+            <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-wider block font-semibold">Net Retained Profit</span>
+            <span class="text-base sm:text-xl font-extrabold text-emerald-300 text-right font-mono mt-2" id="monthlyProfit">₹7,23,000</span>
           </div>
         </div>
       </section>
@@ -1860,54 +1864,56 @@
       const gemBtn = document.getElementById('gemToggleBtn');
 
       // Reset tabs
-      tabApis.className = "p-2.5 rounded-xl text-left transition-all bg-white/5 border border-transparent hover:bg-white/10 text-slate-300 flex items-center justify-between";
+      tabApis.className = "p-3 rounded-xl text-left transition-all bg-white/[0.02] border border-transparent hover:bg-white/5 text-slate-300 flex items-center justify-between";
       tabApis.querySelector('span:last-child').className = "text-xs text-slate-500 font-mono";
       tabApis.querySelector('span:last-child').innerText = "Explore →";
 
-      tabDatasets.className = "p-2.5 rounded-xl text-left transition-all bg-white/5 border border-transparent hover:bg-white/10 text-slate-300 flex items-center justify-between";
+      tabDatasets.className = "p-3 rounded-xl text-left transition-all bg-white/[0.02] border border-transparent hover:bg-white/5 text-slate-300 flex items-center justify-between";
       tabDatasets.querySelector('span:last-child').className = "text-xs text-slate-500 font-mono";
       tabDatasets.querySelector('span:last-child').innerText = "Explore →";
 
-      tabUs.className = "p-2.5 rounded-xl text-left transition-all bg-white/5 border border-transparent hover:bg-white/10 text-slate-300 flex items-center justify-between";
+      tabUs.className = "p-3 rounded-xl text-left transition-all bg-white/[0.02] border border-transparent hover:bg-white/5 text-slate-300 flex items-center justify-between";
       tabUs.querySelector('span:last-child').className = "text-xs text-slate-500 font-mono";
       tabUs.querySelector('span:last-child').innerText = "Explore →";
 
       gemBtn.style.display = (mode === 'apis') ? 'flex' : 'none';
 
       if (mode === 'apis') {
-        tabApis.className = "p-2.5 rounded-xl text-left transition-all bg-emerald-500/20 border border-emerald-500/40 text-white shadow-sm flex items-center justify-between";
-        tabApis.querySelector('span:last-child').className = "text-xs text-emerald-400 font-mono";
-        tabApis.querySelector('span:last-child').innerText = "● Active";
+        tabApis.className = "p-3 rounded-xl text-left transition-all bg-emerald-500/15 border border-emerald-500/40 text-white shadow-sm flex items-center justify-between";
+        tabApis.querySelector('span:last-child').className = "text-xs text-emerald-400 font-mono font-semibold";
+        tabApis.querySelector('span:last-child').innerText = "Active";
         sectorChips.classList.remove('hidden');
         explainer.classList.add('hidden');
       } else if (mode === 'datasets') {
-        tabDatasets.className = "p-2.5 rounded-xl text-left transition-all bg-purple-500/20 border border-purple-500/40 text-white shadow-sm flex items-center justify-between";
-        tabDatasets.querySelector('span:last-child').className = "text-xs text-purple-400 font-mono";
-        tabDatasets.querySelector('span:last-child').innerText = "● Active";
+        tabDatasets.className = "p-3 rounded-xl text-left transition-all bg-purple-500/15 border border-purple-500/40 text-white shadow-sm flex items-center justify-between";
+        tabDatasets.querySelector('span:last-child').className = "text-xs text-purple-400 font-mono font-semibold";
+        tabDatasets.querySelector('span:last-child').innerText = "Active";
         sectorChips.classList.add('hidden');
         explainer.classList.remove('hidden');
-        explainer.className = "p-3 bg-purple-950/40 border border-purple-500/30 rounded-xl text-xs space-y-1";
+        explainer.className = "p-3.5 bg-purple-950/30 border border-purple-500/30 rounded-xl text-xs space-y-1";
         explainer.innerHTML = `
           <div class="flex items-center gap-1.5 font-mono font-bold text-purple-300">
-            <span>📦 INDIA'S 10 MASTER BULK REGISTRIES (OGD, MCA, NJDG, ISRO & CENSUS)</span>
+            <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+            <span>INDIA'S 10 MASTER BULK REGISTRIES (OGD, MCA, NJDG, ISRO & CENSUS)</span>
           </div>
           <p class="text-slate-300 leading-relaxed">
             These are not single-record APIs—they are massive, downloadable national databases with millions of rows. Founders can download these dumps to train domain AI models, build geospatial systems, or create automated corporate diligence platforms without ongoing query fees.
           </p>
         `;
       } else if (mode === 'us') {
-        tabUs.className = "p-2.5 rounded-xl text-left transition-all bg-cyan-500/20 border border-cyan-500/40 text-white shadow-sm flex items-center justify-between";
-        tabUs.querySelector('span:last-child').className = "text-xs text-cyan-400 font-mono";
-        tabUs.querySelector('span:last-child').innerText = "● Active";
+        tabUs.className = "p-3 rounded-xl text-left transition-all bg-cyan-500/15 border border-cyan-500/40 text-white shadow-sm flex items-center justify-between";
+        tabUs.querySelector('span:last-child').className = "text-xs text-cyan-400 font-mono font-semibold";
+        tabUs.querySelector('span:last-child').innerText = "Active";
         sectorChips.classList.add('hidden');
         explainer.classList.remove('hidden');
-        explainer.className = "p-3 bg-cyan-950/40 border border-cyan-500/30 rounded-xl text-xs space-y-1";
+        explainer.className = "p-3.5 bg-cyan-950/30 border border-cyan-500/30 rounded-xl text-xs space-y-1";
         explainer.innerHTML = `
           <div class="flex items-center gap-1.5 font-mono font-bold text-cyan-300">
-            <span>🇺🇸 US FEDERAL OPEN DATA & THE "ZERO DATA CAC" ARBITRAGE (api.data.gov)</span>
+            <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+            <span>US FEDERAL OPEN DATA & THE "ZERO DATA CAC" ARBITRAGE (api.data.gov)</span>
           </div>
           <p class="text-slate-300 leading-relaxed">
-            Under <span class="text-cyan-200 font-mono font-bold">17 U.S.C. § 105</span>, works of the US Federal Government cannot be copyrighted—they are 100% public domain. Bloomberg, Veeva ($30B), FactSet, and Descartes Underwriting were built on this exact data. Global founders can build cross-border SaaS from India with <span class="text-emerald-400 font-bold">$0 Data Acquisition Cost</span> and bill US corporate clients in USD!
+            Under <span class="text-cyan-200 font-mono font-bold">17 U.S.C. § 105</span>, works of the US Federal Government cannot be copyrighted—they are 100% public domain. Bloomberg, Veeva ($30B), FactSet, and Descartes Underwriting were built on this exact data. Global founders can build cross-border SaaS from India with <span class="text-emerald-400 font-bold">$0 Data Acquisition Cost</span> and bill US corporate clients in USD.
           </p>
         `;
       }
@@ -1933,17 +1939,24 @@
         counter.innerText = `${filtered.length} of ${allApis.length} APIs`;
 
         if (filtered.length === 0) {
-          container.innerHTML = `<div class="sm:col-span-2 p-8 text-center bg-white/5 rounded-xl border border-white/10 space-y-2"><span class="text-2xl">🔍</span><div class="text-sm font-bold text-white">No Indian APIs match your search</div><p class="text-xs text-slate-400">Try searching broader keywords like "tax", "doctor", "land", "court", or "degree".</p></div>`;
+          container.innerHTML = `
+            <div class="sm:col-span-2 p-8 text-center bg-white/[0.02] rounded-xl border border-white/10 space-y-2">
+              <svg class="w-8 h-8 text-slate-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              <div class="text-sm font-bold text-white">No Indian APIs match your search</div>
+              <p class="text-xs text-slate-400">Try searching broader keywords like "tax", "doctor", "land", "court", or "degree".</p>
+              <button onclick="resetFilters()" class="px-3 py-1 text-xs font-mono bg-white/10 hover:bg-white/20 text-emerald-400 rounded-lg transition-all">Clear Search</button>
+            </div>
+          `;
           return;
         }
 
         container.innerHTML = filtered.map(api => `
-          <div class="p-4 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 space-y-2.5 card-touch flex flex-col justify-between">
-            <div class="space-y-2">
+          <div class="p-4 bg-white/[0.02] hover:bg-white/[0.04] backdrop-blur-md rounded-xl border border-white/10 hover:border-white/20 transition-all duration-200 space-y-3 card-touch flex flex-col justify-between">
+            <div class="space-y-2.5">
               <div class="flex items-center justify-between gap-1.5 flex-wrap">
                 <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-white/10 text-slate-200 border border-white/15">${api.code}</span>
                 <div class="flex items-center gap-1.5">
-                  ${api.isGem ? `<span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 animate-pulse">⚡ TOP AHA GEM</span>` : ''}
+                  ${api.isGem ? `<span class="px-2 py-0.5 text-[9px] font-mono font-bold rounded bg-amber-500/15 text-amber-300 border border-amber-500/30 tracking-wider">FEATURED GEM</span>` : ''}
                   <span class="px-2 py-0.5 text-[10px] font-mono rounded ${
                     api.access.includes('Service') ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' :
                     api.access.includes('Document') ? 'bg-purple-500/20 text-purple-300 border border-purple-500/30' :
@@ -1957,15 +1970,16 @@
                 <p class="text-[11px] text-slate-400 mt-0.5 font-medium">Source: <span class="text-slate-200">${api.publisher}</span></p>
               </div>
 
-              <div class="p-2 bg-black/40 rounded-lg border border-white/5 text-[11px] font-mono text-slate-300 space-y-0.5">
-                <span class="text-[10px] text-slate-500 uppercase tracking-wider block">MACHINE-READABLE FIELDS:</span>
+              <div class="p-2.5 bg-black/50 rounded-lg border border-white/5 text-[11px] font-mono text-slate-300 space-y-0.5">
+                <span class="text-[10px] text-slate-500 uppercase tracking-wider block">MACHINE-READABLE SCHEMA:</span>
                 <p class="leading-relaxed text-slate-300">${api.fields}</p>
               </div>
             </div>
 
-            <div class="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-xs space-y-1">
-              <div class="flex items-center gap-1 text-[10px] font-mono font-extrabold uppercase tracking-wider text-emerald-400">
-                <span>💡 AHA! WHAT YOU CAN BUILD:</span>
+            <div class="p-3 rounded-lg bg-emerald-950/30 border border-emerald-500/25 text-xs space-y-1">
+              <div class="flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-400">
+                <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <span>VENTURE BLUEPRINT</span>
               </div>
               <p class="text-slate-200 font-medium leading-relaxed">${api.aha}</p>
             </div>
@@ -1983,11 +1997,11 @@
         counter.innerText = `${filtered.length} of ${indiaDatasets.length} Datasets`;
 
         container.innerHTML = filtered.map(ds => `
-          <div class="p-4 bg-white/5 backdrop-blur-md rounded-xl border border-purple-500/20 space-y-2.5 card-touch flex flex-col justify-between">
-            <div class="space-y-2">
+          <div class="p-4 bg-white/[0.02] hover:bg-white/[0.04] backdrop-blur-md rounded-xl border border-purple-500/20 hover:border-purple-500/30 transition-all duration-200 space-y-3 card-touch flex flex-col justify-between">
+            <div class="space-y-2.5">
               <div class="flex items-center justify-between gap-1.5 flex-wrap">
                 <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">${ds.code}</span>
-                <span class="px-2 py-0.5 text-[10px] font-mono bg-white/10 text-slate-300 rounded border border-white/15">📦 BULK DATASET</span>
+                <span class="px-2 py-0.5 text-[9px] font-mono bg-white/10 text-purple-200 rounded border border-white/15 uppercase font-semibold">MASTER REGISTRY</span>
               </div>
 
               <div>
@@ -1996,25 +2010,26 @@
               </div>
 
               <div class="grid grid-cols-2 gap-2 text-[10px] font-mono">
-                <div class="p-1.5 bg-black/40 rounded border border-white/5 text-purple-300">
-                  <span class="text-slate-500 block">SCALE:</span>
+                <div class="p-2 bg-black/50 rounded-lg border border-white/5 text-purple-300">
+                  <span class="text-slate-500 block text-[9px] uppercase tracking-wider">SCALE:</span>
                   ${ds.volume}
                 </div>
-                <div class="p-1.5 bg-black/40 rounded border border-white/5 text-slate-300">
-                  <span class="text-slate-500 block">UPDATE:</span>
+                <div class="p-2 bg-black/50 rounded-lg border border-white/5 text-slate-300">
+                  <span class="text-slate-500 block text-[9px] uppercase tracking-wider">UPDATE:</span>
                   ${ds.cadence}
                 </div>
               </div>
 
-              <div class="p-2 bg-black/40 rounded-lg border border-white/5 text-[11px] font-mono text-slate-300 space-y-0.5">
+              <div class="p-2.5 bg-black/50 rounded-lg border border-white/5 text-[11px] font-mono text-slate-300 space-y-0.5">
                 <span class="text-[10px] text-slate-500 uppercase tracking-wider block">KEY SCHEMA COLUMNS:</span>
                 <p class="leading-relaxed text-slate-300">${ds.fields}</p>
               </div>
             </div>
 
-            <div class="p-2.5 rounded-lg bg-purple-950/40 border border-purple-500/30 text-xs space-y-1">
-              <div class="flex items-center gap-1 text-[10px] font-mono font-extrabold uppercase tracking-wider text-purple-300">
-                <span>💡 AHA! VENTURE / SAAS YOU CAN BUILD:</span>
+            <div class="p-3 rounded-lg bg-purple-950/30 border border-purple-500/25 text-xs space-y-1">
+              <div class="flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-purple-300">
+                <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <span>AI & INFRASTRUCTURE SAAS BLUEPRINT</span>
               </div>
               <p class="text-slate-200 font-medium leading-relaxed">${ds.aha}</p>
             </div>
@@ -2032,14 +2047,14 @@
         counter.innerText = `${filtered.length} of ${usFederalApis.length} US APIs`;
 
         container.innerHTML = filtered.map(us => `
-          <div class="p-4 bg-cyan-950/20 backdrop-blur-md rounded-xl border border-cyan-500/30 space-y-2.5 card-touch flex flex-col justify-between">
-            <div class="space-y-2">
+          <div class="p-4 bg-cyan-950/15 hover:bg-cyan-950/25 backdrop-blur-md rounded-xl border border-cyan-500/25 hover:border-cyan-500/40 transition-all duration-200 space-y-3 card-touch flex flex-col justify-between">
+            <div class="space-y-2.5">
               <div class="flex items-center justify-between gap-1.5 flex-wrap">
                 <div class="flex items-center gap-1.5">
-                  <span class="text-sm">🇺🇸</span>
+                  <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
                   <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">${us.code}</span>
                 </div>
-                <span class="px-2 py-0.5 text-[9px] font-mono bg-white/10 text-cyan-200 rounded border border-white/15">PUBLIC DOMAIN • 17 U.S.C. § 105</span>
+                <span class="px-2 py-0.5 text-[9px] font-mono bg-white/10 text-cyan-200 rounded border border-white/15 uppercase font-semibold">PUBLIC DOMAIN • 17 U.S.C. § 105</span>
               </div>
 
               <div>
@@ -2047,21 +2062,24 @@
                 <p class="text-[11px] text-slate-400 mt-0.5 font-medium">Agency: <span class="text-cyan-200">${us.publisher}</span></p>
               </div>
 
-              <!-- Billion Dollar Precedents Tag -->
-              <div class="p-2 bg-black/50 rounded-lg border border-cyan-500/20 text-[11px] space-y-0.5">
-                <span class="text-[10px] font-mono text-cyan-400 uppercase tracking-wider block font-bold">🏆 BILLION-DOLLAR COMPANIES BUILT ON THIS:</span>
+              <div class="p-2.5 bg-black/50 rounded-lg border border-cyan-500/20 text-[11px] space-y-1">
+                <div class="flex items-center gap-1 text-[10px] font-mono text-cyan-400 uppercase tracking-wider font-bold">
+                  <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>PROVEN COMMERCIAL PRECEDENTS:</span>
+                </div>
                 <p class="text-slate-200 font-medium">${us.unicorns}</p>
               </div>
 
-              <div class="p-2 bg-black/40 rounded-lg border border-white/5 text-[11px] font-mono text-slate-300 space-y-0.5">
+              <div class="p-2.5 bg-black/50 rounded-lg border border-white/5 text-[11px] font-mono text-slate-300 space-y-0.5">
                 <span class="text-[10px] text-slate-500 uppercase tracking-wider block">KEY ENDPOINTS & DATA PAYLOAD:</span>
                 <p class="leading-relaxed text-slate-300">${us.fields}</p>
               </div>
             </div>
 
-            <div class="p-2.5 rounded-lg bg-cyan-950/60 border border-cyan-400/40 text-xs space-y-1">
-              <div class="flex items-center gap-1 text-[10px] font-mono font-extrabold uppercase tracking-wider text-cyan-300">
-                <span>💡 CROSS-BORDER SAAS FOUNDER AHA MOMENT:</span>
+            <div class="p-3 rounded-lg bg-cyan-950/40 border border-cyan-400/30 text-xs space-y-1">
+              <div class="flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-300">
+                <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <span>CROSS-BORDER USD SAAS BLUEPRINT:</span>
               </div>
               <p class="text-slate-100 font-medium leading-relaxed">${us.aha}</p>
             </div>
