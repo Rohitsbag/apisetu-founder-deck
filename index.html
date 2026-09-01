@@ -34,24 +34,23 @@
     }
     body {
       touch-action: manipulation;
-      background-color: #0c0e14;
+      background-color: #080b11;
     }
-    /* Fixed Subtle Abstract Background Texture */
-    .bg-abstract-layer {
-      position: fixed;
+    /* Hero section ONLY abstract background with smooth bottom fade to solid #080b11 */
+    .hero-abstract-bg {
+      position: absolute;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-image: url('./abstract_bg.jpg');
+      right: 0;
+      bottom: 0;
+      background-image: linear-gradient(to bottom, rgba(8, 11, 17, 0.45) 0%, rgba(8, 11, 17, 0.82) 65%, #080b11 100%), url('./abstract_bg.jpg');
       background-size: cover;
-      background-position: center;
+      background-position: center top;
       background-repeat: no-repeat;
-      opacity: 0.28;
       pointer-events: none;
       z-index: 0;
     }
-    /* Subtle Ambient Mesh Grid */
+    /* Subtle Ambient Dotted Mesh Grid (Preserved Across Page) */
     .bg-grid-layer {
       position: fixed;
       top: 0;
@@ -80,25 +79,25 @@
     @media (min-width: 768px) {
       .card-touch:hover {
         transform: translateY(-2px);
-        box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5);
         border-color: rgba(255, 255, 255, 0.2);
       }
     }
     .active-pill {
       background-color: #FFFFFF !important;
-      color: #0B0D13 !important;
+      color: #080B11 !important;
       border-color: #FFFFFF !important;
     }
   </style>
 </head>
-<body class="text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-black pb-28 md:pb-20 relative">
+<body class="text-slate-100 font-sans antialiased bg-[#080b11] selection:bg-emerald-500 selection:text-black pb-28 md:pb-20 relative">
 
-  <!-- BACKGROUND LAYERS -->
-  <div class="bg-abstract-layer"></div>
+  <!-- DOTTED MESH PATTERN (PRESERVED ACROSS FULL PAGE) -->
   <div class="bg-grid-layer"></div>
 
-  <!-- CONTENT WRAPPER (ABOVE BACKGROUND) -->
-  <div class="relative z-10">
+  <!-- TOP HERO CONTAINER (ABSTRACT BACKGROUND ONLY HERE) -->
+  <div class="relative overflow-hidden border-b border-white/10 z-10">
+    <div class="hero-abstract-bg"></div>
 
     <!-- TOP APP BAR -->
     <header class="border-b border-white/10 bg-[#0c0e14]/80 backdrop-blur-xl sticky top-0 z-40">
@@ -149,7 +148,7 @@
       </a>
     </nav>
 
-    <main class="max-w-6xl mx-auto px-4 sm:px-5 pt-6 space-y-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-5 pt-6 pb-6 relative z-10">
 
       <!-- 1. HERO & PLATFORM SCALE WITH 3D NETWORK GRAPHIC -->
       <section id="sec-overview" class="space-y-5 pt-2">
@@ -190,7 +189,7 @@
 
         <!-- 4 VISUAL HARD STAT CARDS -->
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 pt-2">
-          <div class="p-3.5 sm:p-4 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 card-touch">
+          <div class="p-3.5 sm:p-4 bg-[#0e131f] rounded-xl border border-white/10 card-touch">
             <div class="flex items-center justify-between text-slate-400">
               <span class="text-[10px] font-mono uppercase tracking-wider">Business & Tax</span>
               <span class="text-emerald-400 font-mono text-xs">●</span>
@@ -199,7 +198,7 @@
             <div class="text-[11px] text-emerald-400 font-medium">GSTN & MCA21 Master</div>
           </div>
 
-          <div class="p-3.5 sm:p-4 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 card-touch">
+          <div class="p-3.5 sm:p-4 bg-[#0e131f] rounded-xl border border-white/10 card-touch">
             <div class="flex items-center justify-between text-slate-400">
               <span class="text-[10px] font-mono uppercase tracking-wider">Mobility & Fleet</span>
               <span class="text-blue-400 font-mono text-xs">●</span>
@@ -208,7 +207,7 @@
             <div class="text-[11px] text-blue-400 font-medium">Vahan RCs & Sarathi DLs</div>
           </div>
 
-          <div class="p-3.5 sm:p-4 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 card-touch">
+          <div class="p-3.5 sm:p-4 bg-[#0e131f] rounded-xl border border-white/10 card-touch">
             <div class="flex items-center justify-between text-slate-400">
               <span class="text-[10px] font-mono uppercase tracking-wider">Education</span>
               <span class="text-purple-400 font-mono text-xs">●</span>
@@ -217,7 +216,7 @@
             <div class="text-[11px] text-purple-400 font-medium">CBSE & University Degrees</div>
           </div>
 
-          <div class="p-3.5 sm:p-4 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 card-touch">
+          <div class="p-3.5 sm:p-4 bg-[#0e131f] rounded-xl border border-white/10 card-touch">
             <div class="flex items-center justify-between text-slate-400">
               <span class="text-[10px] font-mono uppercase tracking-wider">Welfare</span>
               <span class="text-amber-400 font-mono text-xs">●</span>
@@ -227,13 +226,18 @@
           </div>
         </div>
       </section>
+    </div>
+  </div>
 
-      <!-- 2. THE ECONOMIC SHIFT INFOGRAPHIC -->
-      <section class="bg-white/5 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-white/10 space-y-4">
-        <div class="flex items-center justify-between">
-          <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">THE ECONOMIC SHIFT</span>
-          <span class="text-xs font-mono text-slate-400">Why Software Wins</span>
-        </div>
+  <!-- SOLID CANVAS CONTENT AREA (DATA, CATALOG, CALCULATOR, BLUEPRINTS) -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-5 py-8 space-y-12 relative z-10">
+
+    <!-- 2. THE ECONOMIC SHIFT INFOGRAPHIC -->
+    <section class="bg-[#0e131f] p-4 sm:p-6 rounded-2xl border border-white/10 space-y-4 shadow-xl">
+      <div class="flex items-center justify-between">
+        <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">THE ECONOMIC SHIFT</span>
+        <span class="text-xs font-mono text-slate-400">Why Software Wins</span>
+      </div>
 
         <div class="grid md:grid-cols-2 gap-3 sm:gap-4">
           <!-- Old Way -->
@@ -298,40 +302,40 @@
         </div>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
-          <div class="p-3 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-white/10 space-y-1">
+          <div class="p-3 bg-[#0e131f] hover:bg-[#121827] rounded-xl border border-white/10 space-y-1">
             <span class="text-amber-400 font-mono text-[9px] font-bold block">MOAT 01</span>
             <div class="text-xs font-bold text-white leading-tight">Zero Noise</div>
-            <p class="text-[11px] text-slate-400 leading-snug">No AI wrapper clones. Pure blue ocean.</p>
+            <p class="text-[11px] text-slate-300 leading-snug">No AI wrapper clones. Pure blue ocean.</p>
           </div>
 
-          <div class="p-3 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-white/10 space-y-1">
+          <div class="p-3 bg-[#0e131f] hover:bg-[#121827] rounded-xl border border-white/10 space-y-1">
             <span class="text-emerald-400 font-mono text-[9px] font-bold block">MOAT 02</span>
             <div class="text-xs font-bold text-white leading-tight">Legally Required</div>
-            <p class="text-[11px] text-slate-400 leading-snug">DPDP & GST laws force companies to buy.</p>
+            <p class="text-[11px] text-slate-300 leading-snug">DPDP & GST laws force companies to buy.</p>
           </div>
 
-          <div class="p-3 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-white/10 space-y-1">
+          <div class="p-3 bg-[#0e131f] hover:bg-[#121827] rounded-xl border border-white/10 space-y-1">
             <span class="text-blue-400 font-mono text-[9px] font-bold block">MOAT 03</span>
             <div class="text-xs font-bold text-white leading-tight">Legal Force</div>
-            <p class="text-[11px] text-slate-400 leading-snug">IT Act § 9A valid. Cannot be faked.</p>
+            <p class="text-[11px] text-slate-300 leading-snug">IT Act § 9A valid. Cannot be faked.</p>
           </div>
 
-          <div class="p-3 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-white/10 space-y-1">
+          <div class="p-3 bg-[#0e131f] hover:bg-[#121827] rounded-xl border border-white/10 space-y-1">
             <span class="text-purple-400 font-mono text-[9px] font-bold block">MOAT 04</span>
             <div class="text-xs font-bold text-white leading-tight">85%+ Margins</div>
-            <p class="text-[11px] text-slate-400 leading-snug">Zero manual ops. Sub-second API speed.</p>
+            <p class="text-[11px] text-slate-300 leading-snug">Zero manual ops. Sub-second API speed.</p>
           </div>
 
-          <div class="p-3 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-white/10 space-y-1">
+          <div class="p-3 bg-[#0e131f] hover:bg-[#121827] rounded-xl border border-white/10 space-y-1">
             <span class="text-rose-400 font-mono text-[9px] font-bold block">MOAT 05</span>
             <div class="text-xs font-bold text-white leading-tight">Zero Churn</div>
-            <p class="text-[11px] text-slate-400 leading-snug">Embedded into client daily HR & billing.</p>
+            <p class="text-[11px] text-slate-300 leading-snug">Embedded into client daily HR & billing.</p>
           </div>
 
-          <div class="p-3 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-white/10 space-y-1">
+          <div class="p-3 bg-[#0e131f] hover:bg-[#121827] rounded-xl border border-white/10 space-y-1">
             <span class="text-cyan-400 font-mono text-[9px] font-bold block">MOAT 06</span>
             <div class="text-xs font-bold text-white leading-tight">Free Rails</div>
-            <p class="text-[11px] text-slate-400 leading-snug">US pays millions for Plaid. In India: $0.</p>
+            <p class="text-[11px] text-slate-300 leading-snug">US pays millions for Plaid. In India: $0.</p>
           </div>
         </div>
       </section>
@@ -344,35 +348,35 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-2.5">
-          <div class="p-3.5 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-white/10 space-y-2">
+          <div class="p-3.5 bg-[#0e131f] hover:bg-[#121827] rounded-xl border border-white/10 space-y-2">
             <div class="flex items-center justify-between">
               <span class="text-xs font-bold text-white">1. With User OTP</span>
               <span class="px-2 py-0.5 text-[9px] font-mono bg-emerald-500/20 text-emerald-300 rounded border border-emerald-500/30 font-semibold">DigiLocker</span>
             </div>
-            <p class="text-xs text-slate-300">User approves via SMS OTP. Pulls signed legal certificates.</p>
-            <div class="text-[10px] font-mono text-emerald-300/80 bg-emerald-950/30 px-2 py-1 rounded border border-emerald-500/20">
+            <p class="text-xs text-slate-200">User approves via SMS OTP. Pulls signed legal certificates.</p>
+            <div class="text-[10px] font-mono text-emerald-300 bg-emerald-950/40 px-2 py-1 rounded border border-emerald-500/25">
               PAN • Degrees • Marksheets • RC • DL
             </div>
           </div>
 
-          <div class="p-3.5 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-white/10 space-y-2">
+          <div class="p-3.5 bg-[#0e131f] hover:bg-[#121827] rounded-xl border border-white/10 space-y-2">
             <div class="flex items-center justify-between">
               <span class="text-xs font-bold text-white">2. Direct Key (No OTP)</span>
               <span class="px-2 py-0.5 text-[9px] font-mono bg-blue-500/20 text-blue-300 rounded border border-blue-500/30 font-semibold">Instant Query</span>
             </div>
-            <p class="text-xs text-slate-300">Instant lookup by your server. Check public status & filings.</p>
-            <div class="text-[10px] font-mono text-blue-300/80 bg-blue-950/30 px-2 py-1 rounded border border-blue-500/20">
+            <p class="text-xs text-slate-200">Instant lookup by your server. Check public status & filings.</p>
+            <div class="text-[10px] font-mono text-blue-300 bg-blue-950/40 px-2 py-1 rounded border border-blue-500/25">
               GSTN Active • Challans • Court Cases • MCA
             </div>
           </div>
 
-          <div class="p-3.5 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-white/10 space-y-2">
+          <div class="p-3.5 bg-[#0e131f] hover:bg-[#121827] rounded-xl border border-white/10 space-y-2">
             <div class="flex items-center justify-between">
               <span class="text-xs font-bold text-white">3. Bulk Registries</span>
               <span class="px-2 py-0.5 text-[9px] font-mono bg-purple-500/20 text-purple-300 rounded border border-purple-500/30 font-semibold">Open Dumps</span>
             </div>
-            <p class="text-xs text-slate-300">Downloadable databases. Train AI or build location engines.</p>
-            <div class="text-[10px] font-mono text-purple-300/80 bg-purple-950/30 px-2 py-1 rounded border border-purple-500/20">
+            <p class="text-xs text-slate-200">Downloadable databases. Train AI or build location engines.</p>
+            <div class="text-[10px] font-mono text-purple-300 bg-purple-950/40 px-2 py-1 rounded border border-purple-500/25">
               155k PIN Codes • Mandi Rates • 2.6M Companies
             </div>
           </div>
@@ -519,71 +523,71 @@
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
           <!-- 1. VyaparRadar -->
-          <div class="p-3.5 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-white/10 space-y-2">
+          <div class="p-3.5 bg-[#0e131f] hover:bg-[#121827] rounded-xl border border-white/10 space-y-2">
             <div class="flex items-center justify-between">
               <h3 class="text-xs sm:text-sm font-bold text-white">1. VyaparRadar</h3>
               <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded font-bold">₹499/mo</span>
             </div>
-            <p class="text-xs text-slate-300 leading-snug">
+            <p class="text-xs text-slate-200 leading-snug">
               Check GST tax history to spot fake vendors before paying advance money.
             </p>
-            <div class="text-[10px] text-slate-400 font-mono pt-1 border-t border-white/5">
+            <div class="text-[10px] text-slate-300 font-mono pt-1 border-t border-white/5">
               Buyers: 63M Indian Businesses
             </div>
           </div>
 
           <!-- 2. VeriDegree -->
-          <div class="p-3.5 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-white/10 space-y-2">
+          <div class="p-3.5 bg-[#0e131f] hover:bg-[#121827] rounded-xl border border-white/10 space-y-2">
             <div class="flex items-center justify-between">
               <h3 class="text-xs sm:text-sm font-bold text-white">2. VeriDegree</h3>
               <span class="text-[10px] font-mono text-purple-300 bg-purple-500/10 px-1.5 py-0.5 rounded font-bold">₹99/check</span>
             </div>
-            <p class="text-xs text-slate-300 leading-snug">
+            <p class="text-xs text-slate-200 leading-snug">
               Instant background check. Confirms real college degrees directly from universities.
             </p>
-            <div class="text-[10px] text-slate-400 font-mono pt-1 border-t border-white/5">
+            <div class="text-[10px] text-slate-300 font-mono pt-1 border-t border-white/5">
               Buyers: 120k+ Startups & Companies
             </div>
           </div>
 
           <!-- 3. VahanDossier -->
-          <div class="p-3.5 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-white/10 space-y-2">
+          <div class="p-3.5 bg-[#0e131f] hover:bg-[#121827] rounded-xl border border-white/10 space-y-2">
             <div class="flex items-center justify-between">
               <h3 class="text-xs sm:text-sm font-bold text-white">3. VahanDossier</h3>
               <span class="text-[10px] font-mono text-amber-300 bg-amber-500/10 px-1.5 py-0.5 rounded font-bold">₹49/report</span>
             </div>
-            <p class="text-xs text-slate-300 leading-snug">
+            <p class="text-xs text-slate-200 leading-snug">
               Check used cars for unpaid bank loans, true owner count, and traffic fines.
             </p>
-            <div class="text-[10px] text-slate-400 font-mono pt-1 border-t border-white/5">
+            <div class="text-[10px] text-slate-300 font-mono pt-1 border-t border-white/5">
               Buyers: 6M Used Car Buyers / year
             </div>
           </div>
 
           <!-- 4. SchemeHak -->
-          <div class="p-3.5 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-white/10 space-y-2">
+          <div class="p-3.5 bg-[#0e131f] hover:bg-[#121827] rounded-xl border border-white/10 space-y-2">
             <div class="flex items-center justify-between">
               <h3 class="text-xs sm:text-sm font-bold text-white">4. SchemeHak</h3>
               <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded font-bold">Free to Users</span>
             </div>
-            <p class="text-xs text-slate-300 leading-snug">
+            <p class="text-xs text-slate-200 leading-snug">
               Answer 4 questions to find government scholarships and money you can claim.
             </p>
-            <div class="text-[10px] text-slate-400 font-mono pt-1 border-t border-white/5">
+            <div class="text-[10px] text-slate-300 font-mono pt-1 border-t border-white/5">
               Users: 400M Eligible Citizens
             </div>
           </div>
 
           <!-- 5. TrustPass -->
-          <div class="p-3.5 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-white/10 space-y-2 sm:col-span-2 lg:col-span-2">
+          <div class="p-3.5 bg-[#0e131f] hover:bg-[#121827] rounded-xl border border-white/10 space-y-2 sm:col-span-2 lg:col-span-2">
             <div class="flex items-center justify-between">
               <h3 class="text-xs sm:text-sm font-bold text-white">5. TrustPass</h3>
               <span class="text-[10px] font-mono text-cyan-300 bg-cyan-500/10 px-1.5 py-0.5 rounded font-bold">₹2,000/mo per society</span>
             </div>
-            <p class="text-xs text-slate-300 leading-snug">
+            <p class="text-xs text-slate-200 leading-snug">
               Digital QR pass for apartment tenants that proves identity without showing private Aadhaar cards.
             </p>
-            <div class="text-[10px] text-slate-400 font-mono pt-1 border-t border-white/5">
+            <div class="text-[10px] text-slate-300 font-mono pt-1 border-t border-white/5">
               Buyers: Apartment Housing Societies (RWAs)
             </div>
           </div>
@@ -598,34 +602,34 @@
         </div>
 
         <div class="grid sm:grid-cols-3 gap-2">
-          <div class="p-3 bg-white/[0.02] rounded-xl border border-white/10 space-y-1">
+          <div class="p-3 bg-[#0e131f] rounded-xl border border-white/10 space-y-1">
             <span class="text-emerald-400 font-mono text-[9px] font-bold block">1. CLICKABLE DEMO</span>
             <div class="text-xs font-bold text-white">Build in 1–3 Days</div>
-            <p class="text-[11px] text-slate-400 leading-snug">Pick 1 product and build a simple interactive prototype.</p>
+            <p class="text-[11px] text-slate-300 leading-snug">Pick 1 product and build a simple interactive prototype.</p>
           </div>
 
-          <div class="p-3 bg-white/[0.02] rounded-xl border border-white/10 space-y-1">
+          <div class="p-3 bg-[#0e131f] rounded-xl border border-white/10 space-y-1">
             <span class="text-blue-400 font-mono text-[9px] font-bold block">2. TEST FREE APIS</span>
             <div class="text-xs font-bold text-white">Connect in 3–7 Days</div>
-            <p class="text-[11px] text-slate-400 leading-snug">Test live data on government test servers for free.</p>
+            <p class="text-[11px] text-slate-300 leading-snug">Test live data on government test servers for free.</p>
           </div>
 
-          <div class="p-3 bg-white/[0.02] rounded-xl border border-white/10 space-y-1">
+          <div class="p-3 bg-[#0e131f] rounded-xl border border-white/10 space-y-1">
             <span class="text-purple-400 font-mono text-[9px] font-bold block">3. GO LIVE</span>
             <div class="text-xs font-bold text-white">Start Selling</div>
-            <p class="text-[11px] text-slate-400 leading-snug">Switch to production keys and charge paying customers.</p>
+            <p class="text-[11px] text-slate-300 leading-snug">Switch to production keys and charge paying customers.</p>
           </div>
         </div>
 
         <!-- 2 Co-Founder Questions -->
         <div class="grid sm:grid-cols-2 gap-2 text-xs pt-1">
-          <div class="p-3 bg-black/40 rounded-xl border border-white/10 space-y-1">
+          <div class="p-3 bg-[#0a0d14] rounded-xl border border-white/10 space-y-1">
             <span class="font-bold text-emerald-400 block text-xs">Decision 1: Who do we sell to?</span>
-            <p class="text-slate-300 text-[11px] leading-snug">Businesses (checking vendors & hiring) OR Regular people (used cars & scholarships)?</p>
+            <p class="text-slate-200 text-[11px] leading-snug">Businesses (checking vendors & hiring) OR Regular people (used cars & scholarships)?</p>
           </div>
-          <div class="p-3 bg-black/40 rounded-xl border border-white/10 space-y-1">
+          <div class="p-3 bg-[#0a0d14] rounded-xl border border-white/10 space-y-1">
             <span class="font-bold text-emerald-400 block text-xs">Decision 2: How do we charge?</span>
-            <p class="text-slate-300 text-[11px] leading-snug">Monthly business subscription (₹499/mo) OR small one-time fee (₹49/report)?</p>
+            <p class="text-slate-200 text-[11px] leading-snug">Monthly business subscription (₹499/mo) OR small one-time fee (₹49/report)?</p>
           </div>
         </div>
       </section>
@@ -1802,17 +1806,17 @@
         }
 
         let cardsHtml = displayList.map(api => `
-          <div class="p-3.5 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-white/10 hover:border-white/20 transition-all duration-150 flex flex-col justify-between gap-2.5">
+          <div class="p-3.5 bg-[#0e131f] hover:bg-[#121827] rounded-xl border border-white/10 hover:border-emerald-500/30 transition-all duration-150 flex flex-col justify-between gap-2.5 shadow-sm">
             <div>
               <div class="flex items-start justify-between gap-2">
                 <h3 class="text-xs sm:text-sm font-bold text-white tracking-tight leading-snug">${api.name}</h3>
                 ${api.isGem ? `<span class="px-1.5 py-0.2 text-[9px] font-mono font-bold rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 shrink-0">FEATURED</span>` : ''}
               </div>
-              <p class="text-[11px] text-slate-400 mt-1.5 leading-relaxed font-mono">
+              <p class="text-[11px] text-slate-200 mt-1.5 leading-relaxed font-mono">
                 ${api.fields}
               </p>
             </div>
-            <div class="p-2.5 rounded-lg bg-emerald-500/[0.08] border border-emerald-500/25 text-xs text-emerald-100 leading-snug">
+            <div class="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/25 text-xs text-emerald-200 leading-snug">
               <span class="font-bold text-emerald-400 mr-1 font-mono text-[10px] uppercase tracking-wide">BUILD:</span>${api.aha}
             </div>
           </div>
@@ -1822,7 +1826,7 @@
         if (q === '' && currentSector === 'all' && !onlyGems) {
           cardsHtml += `
             <div class="sm:col-span-2 pt-1">
-              <button onclick="toggleShowAll()" class="w-full py-2.5 px-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/10 text-xs font-mono font-semibold text-slate-300 hover:text-white transition-all flex items-center justify-center gap-2 active:scale-98">
+              <button onclick="toggleShowAll()" class="w-full py-2.5 px-4 rounded-xl bg-[#0e131f] hover:bg-[#121827] border border-white/10 text-xs font-mono font-semibold text-slate-200 hover:text-white transition-all flex items-center justify-center gap-2 active:scale-98">
                 <span>${showAll ? '▲ Collapse to Top 6 Highlights' : `▼ Explore Full Directory (${allApis.length} Endpoints Available)`}</span>
               </button>
             </div>
@@ -1845,17 +1849,17 @@
         counter.innerText = isDefaultView ? `4 Curated Registries` : `${filtered.length} of ${indiaDatasets.length} Datasets`;
 
         let cardsHtml = displayList.map(ds => `
-          <div class="p-3.5 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-purple-500/20 hover:border-purple-500/30 transition-all duration-150 flex flex-col justify-between gap-2.5">
+          <div class="p-3.5 bg-[#0e131f] hover:bg-[#121827] rounded-xl border border-purple-500/25 hover:border-purple-500/40 transition-all duration-150 flex flex-col justify-between gap-2.5 shadow-sm">
             <div>
               <div class="flex items-start justify-between gap-2">
                 <h3 class="text-xs sm:text-sm font-bold text-white tracking-tight leading-snug">${ds.name}</h3>
                 <span class="px-1.5 py-0.2 text-[9px] font-mono text-purple-300 bg-purple-500/20 rounded border border-purple-500/30 shrink-0 font-semibold">${ds.volume}</span>
               </div>
-              <p class="text-[11px] text-slate-400 mt-1.5 leading-relaxed font-mono">
+              <p class="text-[11px] text-slate-200 mt-1.5 leading-relaxed font-mono">
                 ${ds.fields}
               </p>
             </div>
-            <div class="p-2.5 rounded-lg bg-purple-500/[0.08] border border-purple-500/25 text-xs text-purple-100 leading-snug">
+            <div class="p-2.5 rounded-lg bg-purple-500/10 border border-purple-500/25 text-xs text-purple-200 leading-snug">
               <span class="font-bold text-purple-300 mr-1 font-mono text-[10px] uppercase tracking-wide">BUILD:</span>${ds.aha}
             </div>
           </div>
@@ -1864,7 +1868,7 @@
         if (q === '') {
           cardsHtml += `
             <div class="sm:col-span-2 pt-1">
-              <button onclick="toggleShowAll()" class="w-full py-2.5 px-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/10 text-xs font-mono font-semibold text-slate-300 hover:text-white transition-all flex items-center justify-center gap-2 active:scale-98">
+              <button onclick="toggleShowAll()" class="w-full py-2.5 px-4 rounded-xl bg-[#0e131f] hover:bg-[#121827] border border-white/10 text-xs font-mono font-semibold text-slate-200 hover:text-white transition-all flex items-center justify-center gap-2 active:scale-98">
                 <span>${showAll ? '▲ Collapse to Top 4 Registries' : `▼ Explore All 10 Bulk Registries`}</span>
               </button>
             </div>
@@ -1887,17 +1891,17 @@
         counter.innerText = isDefaultView ? `4 Curated Benchmarks` : `${filtered.length} of ${usFederalApis.length} US APIs`;
 
         let cardsHtml = displayList.map(us => `
-          <div class="p-3.5 bg-cyan-950/15 hover:bg-cyan-950/25 rounded-xl border border-cyan-500/25 hover:border-cyan-500/40 transition-all duration-150 flex flex-col justify-between gap-2.5">
+          <div class="p-3.5 bg-[#0e131f] hover:bg-[#121827] rounded-xl border border-cyan-500/25 hover:border-cyan-500/40 transition-all duration-150 flex flex-col justify-between gap-2.5 shadow-sm">
             <div>
               <div class="flex items-start justify-between gap-2">
                 <h3 class="text-xs sm:text-sm font-bold text-white tracking-tight leading-snug">${us.name}</h3>
                 <span class="px-1.5 py-0.2 text-[9px] font-mono text-cyan-300 bg-cyan-500/20 rounded border border-cyan-500/30 shrink-0 font-semibold">${us.unicorns.split(',')[0]}</span>
               </div>
-              <p class="text-[11px] text-slate-400 mt-1.5 leading-relaxed font-mono">
+              <p class="text-[11px] text-slate-200 mt-1.5 leading-relaxed font-mono">
                 ${us.fields}
               </p>
             </div>
-            <div class="p-2.5 rounded-lg bg-cyan-500/[0.08] border border-cyan-500/25 text-xs text-cyan-100 leading-snug">
+            <div class="p-2.5 rounded-lg bg-cyan-500/10 border border-cyan-500/25 text-xs text-cyan-200 leading-snug">
               <span class="font-bold text-cyan-300 mr-1 font-mono text-[10px] uppercase tracking-wide">BUILD:</span>${us.aha}
             </div>
           </div>
@@ -1906,7 +1910,7 @@
         if (q === '') {
           cardsHtml += `
             <div class="sm:col-span-2 pt-1">
-              <button onclick="toggleShowAll()" class="w-full py-2.5 px-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/10 text-xs font-mono font-semibold text-slate-300 hover:text-white transition-all flex items-center justify-center gap-2 active:scale-98">
+              <button onclick="toggleShowAll()" class="w-full py-2.5 px-4 rounded-xl bg-[#0e131f] hover:bg-[#121827] border border-white/10 text-xs font-mono font-semibold text-slate-200 hover:text-white transition-all flex items-center justify-center gap-2 active:scale-98">
                 <span>${showAll ? '▲ Collapse to Top 4 Benchmarks' : `▼ Explore All 8 US Sovereign Benchmarks`}</span>
               </button>
             </div>
